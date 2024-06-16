@@ -44,17 +44,33 @@ function openstate(evt, cityName) {
 // СМЕНА ЯЗЫКА
 
 let navItems = document.querySelectorAll('.nav_item');
-let currentIndex = 0;
-navItems.forEach((item, index) => {
-    item.style.display = 'none';
-  });  
-  navItems[currentIndex].style.display = 'flex'; 
-  document.addEventListener('click', () => {
-    navItems[currentIndex].style.display = 'none';
-    currentIndex = (currentIndex + 1) % navItems.length;
-    navItems[currentIndex].style.display = 'flex';
-    localStorage.setItem('lang', currentIndex);
-  });
+// let currentIndex = 0;
+// navItems.forEach((item, index) => {
+//     item.style.display = 'none';
+//   });  
+//   navItems[currentIndex].style.display = 'flex'; 
+//   document.addEventListener('click', () => {
+//     navItems[currentIndex].style.display = 'none';
+//     currentIndex = (currentIndex + 1) % navItems.length;
+//     navItems[currentIndex].style.display = 'flex';
+//     localStorage.setItem('lang', currentIndex);
+//   });
+
+navItems[0].addEventListener('click', ()=>{
+    localStorage.setItem('lang', 0);
+    location.reload();
+});
+navItems[1].addEventListener('click', ()=>{
+    localStorage.setItem('lang', 1);
+    location.reload();
+
+});
+
+navItems[2].addEventListener('click', ()=>{
+    localStorage.setItem('lang', 2);
+    location.reload();
+
+});
 
 // ПОКАЗАТЬ ПАРОЛЬ
 document.addEventListener('DOMContentLoaded', function() {

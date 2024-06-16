@@ -8,6 +8,7 @@ Erlan
     function outputPrice(defaultString){
         let priceWrap = document.querySelectorAll(".pricee");
     let lang = localStorage.getItem('lang');
+    console.log(lang);
     let result =defaultString; 
     if(lang==1){
        result = Number(defaultString) /89;
@@ -23,7 +24,7 @@ Erlan
     priceWrap.forEach(elem=>{
         elem.innerHTML=defaultString;
     });
-    console.log(priceWrap)
+    // console.log(priceWrap)
     // return result;
 
     }
@@ -342,7 +343,10 @@ Erlan
                                         тип питания: {{$item->feed}}
                                     </p>
                                     <p class="more_info_hotel_p">
-                                        тип номера: стандарт, эко
+                                        тип номера: 
+                                        @foreach ($item->numbers() as $number)
+                                            {{$number->type}}, 
+                                        @endforeach
                                     </p>
                                 </div>
                             </div>
