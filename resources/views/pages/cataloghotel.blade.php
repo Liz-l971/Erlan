@@ -353,7 +353,8 @@ Erlan
                                     </p>
                                     <div class="price_main">
                                         <p class="price_number">
-                                            {{$item->feed}}
+                                            
+                                            <script>outputPrice({{$item->feed}})</script>
                                         </p>
                                         <div class="valute">
                                             <svg width="15" height="16" class="" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
