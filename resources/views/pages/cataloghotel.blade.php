@@ -3,37 +3,7 @@
 Erlan
 @endsection
 @section('content')
-<script defer>
-let priceArray =[];
-    function outputPrice(defaultString){
-        let priceWrap = document.querySelectorAll(".pricee");
-    let lang = localStorage.getItem('lang');
-    console.log(lang);
-    let result =defaultString; 
-    
-    if(lang==1){
-       result = Number(defaultString) /89;
-    }
-    if(lang==0){
-       result = Number(defaultString) /12;
-    }
 
-    if(lang==2){
-       result =defaultString;
-    }
-    priceArray.push(result);
-    // console.log(defaultString)
-
-    for(let i = 0; i<priceWrap.length;i++ ){
-        priceWrap[i].innerHTML = priceArray[i];
-    }
-
-    console.log(priceArray)
-    
-    // return result;
-
-    }
-</script>
        <main>
     <section class="banner">
         <div class="container">
@@ -394,8 +364,10 @@ let priceArray =[];
                             </p>
                             <div class="price_main">
                                 <p class="price_number pricee" id="price">
-                                 {{-- {{$item->freeNumber()}} --}}
-                                   <?php echo "<script>outputPrice(".$item->freeNumber().")</script>";?>
+                                 {{$item->freeNumber()}}
+                                   {{-- <?php 
+                                //    echo "<script>outputPrice(".$item->freeNumber().")</script>";?> 
+                                   --}}
                                 </p>
                                 <div class="valute">
                                     <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
