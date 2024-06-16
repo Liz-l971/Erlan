@@ -136,6 +136,14 @@ class WelcomeController extends Controller
             $filterHotel['cost_two'] = '';
         }
 
+        if($lang==0){
+            $costOne = $costOne * 89;
+            $costTwo = $costTwo * 89;
+        }
+        if($lang==2){
+            $costOne = $costOne * 12;
+            $costTwo = $costTwo * 12;
+        }
         $query->where(function ($q) use ($filterHotel) {
             if (isset($filterHotel['ultra_all'])) {
                 $q->where('terms', 'like', '%Ультра всё включено%');
