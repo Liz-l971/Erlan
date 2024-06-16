@@ -1,12 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+
+@extends('loyauts.app')
+@section('title')
+Erlan
+@endsection
+@section('content')
+
+    <div class="right_bilet">
+        <div class="content_bron">
+            <div class="hrum_hrum">
+        
     <h1>{{ $subject }}</h1>
     <p>{{ $body }}</p>
-</body>
-</html>
+
+            </div>
+        </div>
+    </div>
+@endsection
