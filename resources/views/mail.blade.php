@@ -9474,10 +9474,10 @@
         <div class="hrum_hrum">
             <div class="grey_top_inf">
                 <p class="number_order">
-                    ЗАКАЗ №: {{ $bron->id }}
+                    ЗАКАЗ №: {{ $body->id }}
                 </p>
                 <p class="data_bron">
-                    Дата брони: {{ $bron->created_at }}
+                    Дата брони: {{ $body->created_at }}
                 </p>
             </div>
 
@@ -9489,10 +9489,10 @@
                     <div class="tet_a_tet">
                         <div class="column_time">
                             <p class="time">
-                                {{ $bron->raceFrom->time_otb }}
+                                {{ $body->raceFrom->time_otb }}
                             </p>
                             <p class="lit">
-                                {{ $bron->raceFrom->otcuda }}
+                                {{ $body->raceFrom->otcuda }}
                             </p>
                         </div>
                         <svg width="40" height="7" viewBox="0 0 39 7" fill="none"
@@ -9501,11 +9501,11 @@
                         </svg>
                         <div class="column_time">
                             <p class="time">
-                                {{ $bron->raceFrom->time_prib }}
+                                {{ $body->raceFrom->time_prib }}
 
                             </p>
                             <p class="lit">
-                                {{ $bron->raceFrom->cuda }}
+                                {{ $body->raceFrom->cuda }}
 
                             </p>
                         </div>
@@ -9514,22 +9514,22 @@
                     <div class="hotel_info">
 
                         <p class="name_hotel">
-                            {{ $bron->company_from }}
-                            @if ($bron->company_from == 1)
+                            {{ $body->company_from }}
+                            @if ($body->company_from == 1)
                                 Роскосмос
                             @endif
-                            @if ($bron->company_from == 2)
+                            @if ($body->company_from == 2)
                                 SpaceX
                             @endif
-                            @if ($bron->company_from == 3)
+                            @if ($body->company_from == 3)
                                 CNSA
                             @endif
-                            @if ($bron->company_from == 4)
+                            @if ($body->company_from == 4)
                                 BLUE ORIGIN
                             @endif
                         </p>
                         <p class="class_and_eat">
-                            {{ $bron->class_from }}
+                            {{ $body->class_from }}
                         </p>
                     </div>
                     <div class="time_info">
@@ -9537,7 +9537,7 @@
                             время полёта
                         </p>
                         <p class="class_and_eat">
-                            {{ $bron->raceFrom->timeFly()}} д.
+                            {{ $body->raceFrom->timeFly()}} д.
                         </p>
                     </div>
 
@@ -9546,10 +9546,10 @@
                     <div class="tet_a_tet">
                         <div class="column_time">
                             <p class="time">
-                                {{ $bron->raceTo->time_otb }}
+                                {{ $body->raceTo->time_otb }}
                             </p>
                             <p class="lit">
-                                {{ $bron->raceTo->otcuda }}
+                                {{ $body->raceTo->otcuda }}
                             </p>
                         </div>
                         <svg width="40" height="7" viewBox="0 0 39 7" fill="none"
@@ -9558,11 +9558,11 @@
                         </svg>
                         <div class="column_time">
                             <p class="time">
-                                {{ $bron->raceTo->time_prib }}
+                                {{ $body->raceTo->time_prib }}
 
                             </p>
                             <p class="lit">
-                                {{ $bron->raceTo->cuda }}
+                                {{ $body->raceTo->cuda }}
                             </p>
                         </div>
 
@@ -9570,22 +9570,22 @@
                     <div class="hotel_info">
 
                         <p class="name_hotel">
-                            {{ $bron->company_to }}
-                            @if ($bron->company_to == 1)
+                            {{ $body->company_to }}
+                            @if ($body->company_to == 1)
                                 Роскосмос
                             @endif
-                            @if ($bron->company_to == 2)
+                            @if ($body->company_to == 2)
                                 SpaceX
                             @endif
-                            @if ($bron->company_to == 3)
+                            @if ($body->company_to == 3)
                                 CNSA
                             @endif
-                            @if ($bron->company_to == 4)
+                            @if ($body->company_to == 4)
                                 BLUE ORIGIN
                             @endif
                         </p>
                         <p class="class_and_eat">
-                            {{ $bron->class_to }}
+                            {{ $body->class_to }}
                         </p>
                     </div>
                     <div class="time_info">
@@ -9593,7 +9593,7 @@
                             время полёта
                         </p>
                         <p class="class_and_eat">
-                            {{ $bron->raceTo->timeFly()}} д.
+                            {{ $body->raceTo->timeFly()}} д.
                         </p>
                     </div>
 
@@ -9607,7 +9607,7 @@
                         <div class="tet_a_tet">
                             <div class="column_time">
                                 <p class="time">
-                                    {{ $bron->raceFrom->time_prib }}
+                                    {{ $body->raceFrom->time_prib }}
                                 </p>
                                 <p class="lit">
                                     Дата заезда
@@ -9620,7 +9620,7 @@
                             </svg>
                             <div class="column_time">
                                 <p class="time">
-                                    {{ $bron->raceTo->time_otb }}
+                                    {{ $body->raceTo->time_otb }}
                                 </p>
                                 <p class="lit">
                                     Дата выезда
@@ -9663,10 +9663,10 @@
                                 </svg>
                             </div>
                             <p class="name_hotel">
-                                {{ $bron->numberBron->hotelBron->name }}
+                                {{ $body->numberBron->hotelBron->name }}
                             </p>
                             <p class="class_and_eat">
-                                {{ $bron->numberBron->type }} - {{ $bron->numberBron->hotelBron->feed }}
+                                {{ $body->numberBron->type }} - {{ $body->numberBron->hotelBron->feed }}
 
                             </p>
                         </div>
@@ -9675,7 +9675,7 @@
                     </div>
                     <div class="white_block white_cur">
                         <p class="cost">
-                            {{ $bron->cost }}
+                            {{ $body->cost }}
                         </p>
                         <svg width="21" height="23" viewBox="0 0 21 23" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
