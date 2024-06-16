@@ -237,7 +237,7 @@
             
                 <?endif;?>
 
-                <button class="sidebar_toggler sidebar_togglermob">
+                <div class="sidebar_toggler sidebar_togglermob">
                     <div class="">
                         <svg width="78" class="desktop" height="15" viewBox="0 0 78 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M2 2H76" stroke="white" stroke-width="4" stroke-linecap="round" />
@@ -248,7 +248,7 @@
                             <path d="M1.21875 10.0742H53.0395" stroke="white" stroke-width="2.10084" stroke-linecap="round" />
                           </svg>
                     </div> <!-- Иконка бургера -->
-                </button>
+                </div>
                 <div class="sidebar desktop" id="sidebar">
                     <span class="close_btn" id="close_btn">&times;</span><!-- Кнопка закрытия -->
                     <div class="menu_burder_contetn">
