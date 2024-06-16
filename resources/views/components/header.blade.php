@@ -177,7 +177,7 @@
             <nav>
              
                 <?if(!session()->has('lang') || session('lang') == 2):?>
-                <form action="/changeValute" method="POST" class="nav_item" style="display: flex;">
+                {{-- <form action="/changeValute" method="POST" class="nav_item" style="display: flex;">
                     @csrf
                   
                     <input type="hidden" name="lang" value="0">
@@ -191,12 +191,12 @@
                         USD.
                             </p>
                     </button>
-                </form>
+                </form> --}}
                 <?endif;?>
 
                 
                 <?if(session()->has('lang') && session('lang') == 0):?>
-
+{{-- 
                 <form action="/changeValute" method="POST" class="nav_item" style="display: flex;">
                     @csrf
                   
@@ -211,11 +211,11 @@
                                 RUB.
                             </p>
                     </button>
-                </form>
+                </form> --}}
                 <?endif;?>
                 
                 <?if(session()->has('lang') && session('lang') == 1):?>
-
+{{-- 
                 <form action="/changeValute" method="POST" class="nav_item" style="display: flex;">
                     @csrf
                   
@@ -233,7 +233,7 @@
                                 CNY.
                             </p>
                     </button>
-                </form>
+                </form> --}}
             
                 <?endif;?>
 
