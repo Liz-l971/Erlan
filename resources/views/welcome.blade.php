@@ -9,7 +9,7 @@
     @section('content')
    
     
-    <img src=" {{asset('public/assets/img/background/banner.png')}}" class="banner_img" alt="">
+    <img src=" {{asset('/assets/img/background/banner.png')}}" class="banner_img" alt="">
     <main>
         <div class="banner">
             <div class="container">

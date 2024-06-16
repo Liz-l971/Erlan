@@ -63,8 +63,8 @@
                 выберите класс обслуживания
             </h2>
             <div class="admin_btn white_cur">
-                <a href="" class="edit"><img src="../assets/img/icons/edit.svg" alt=""></a>
-                <a href="" class="delete"><img src="../assets/img/icons/delete.svg" alt=""></a>
+                <a href="" class="edit"><img src="{{asset('/assets/img/icons/edit.svg')}}" alt=""></a>
+                <a href="" class="delete"><img src="{{asset('/assets/img/icons/delete.svg')}}" alt=""></a>
             </div>
             <div class="display_content">
                 <div class="flex_column_content">
@@ -72,17 +72,17 @@
                     <div class="column_flight">
                         <div class="company">
                             @if ($fromRace['company']==1)
-                            <img src="{{asset('public/assets/img/company/roscosmos.png')}}" alt="company">
+                            <img src="{{asset('/assets/img/company/roscosmos.png')}}" alt="company">
                             @endif
                             @if ($fromRace['company']==2)
-                            <img src="{{asset('public/assets/img/company/space.png')}}" alt="company">
+                            <img src="{{asset('/assets/img/company/space.png')}}" alt="company">
                             @endif
                             @if ($fromRace['company']==3)
-                            <img src="{{asset('public/assets/img/company/cnsa.png')}}" alt="company">
+                            <img src="{{asset('/assets/img/company/cnsa.png')}}" alt="company">
                             @endif
         
                             @if ($fromRace['company']==4)
-                            <img src="{{asset('public/assets/img/company/space.png')}}" alt="company">
+                            <img src="{{asset('/assets/img/company/space.png')}}" alt="company">
                             @endif
         
                             <h4 class="name_company">
@@ -231,17 +231,17 @@
                     <div class="column_flight">
                         <div class="company">
                             @if ($toRace['company']==1)
-                    <img src="{{asset('public/assets/img/company/roscosmos.png')}}" alt="company">
+                    <img src="{{asset('/assets/img/company/roscosmos.png')}}" alt="company">
                     @endif
                     @if ($toRace['company']==2)
-                    <img src="{{asset('public/assets/img/company/space.png')}}" alt="company">
+                    <img src="{{asset('/assets/img/company/space.png')}}" alt="company">
                     @endif
                     @if ($toRace['company']==3)
-                    <img src="{{asset('public/assets/img/company/cnsa.png')}}" alt="company">
+                    <img src="{{asset('/assets/img/company/cnsa.png')}}" alt="company">
                     @endif
 
                     @if ($toRace['company']==4)
-                    <img src="{{asset('public/assets/img/company/space.png')}}" alt="company">
+                    <img src="{{asset('/assets/img/company/space.png')}}" alt="company">
                     @endif
         
                             <h4 class="name_company">

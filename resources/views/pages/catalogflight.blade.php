@@ -175,17 +175,17 @@ for ($i = 0; $i < count($dictionary); $i++) {
             <div class="name_company_and_status">
                 <div class="company">
                     @if ($fromArray['company']==1)
-                    <img src="{{asset('public/assets/img/company/roscosmos.png')}}" alt="company">
+                    <img src="{{asset('assets/img/company/roscosmos.png')}}" alt="company">
                     @endif
                     @if ($fromArray['company']==2)
-                    <img src="{{asset('public/assets/img/company/space.png')}}" alt="company">
+                    <img src="{{asset('assets/img/company/space.png')}}" alt="company">
                     @endif
                     @if ($fromArray['company']==3)
-                    <img src="{{asset('public/assets/img/company/cnsa.png')}}" alt="company">
+                    <img src="{{asset('assets/img/company/cnsa.png')}}" alt="company">
                     @endif
 
                     @if ($fromArray['company']==4)
-                    <img src="{{asset('public/assets/img/company/space.png')}}" alt="company">
+                    <img src="{{asset('assets/img/company/space.png')}}" alt="company">
                     @endif
                     <h4 class="name_company">
                         @if ($fromArray['company']==1)
@@ -234,17 +234,17 @@ for ($i = 0; $i < count($dictionary); $i++) {
             <div class="name_company_and_status">
                 <div class="company">
                     @if ($toArray['company']==1)
-                    <img src="{{asset('public/assets/img/company/roscosmos.png')}}" alt="company">
+                    <img src="{{asset('assets/img/company/roscosmos.png')}}" alt="company">
                     @endif
                     @if ($toArray['company']==2)
-                    <img src="{{asset('public/assets/img/company/space.png')}}" alt="company">
+                    <img src="{{asset('assets/img/company/space.png')}}" alt="company">
                     @endif
                     @if ($toArray['company']==3)
-                    <img src="{{asset('public/assets/img/company/cnsa.png')}}" alt="company">
+                    <img src="{{asset('assets/img/company/cnsa.png')}}" alt="company">
                     @endif
 
                     @if ($toArray['company']==4)
-                    <img src="{{asset('public/assets/img/company/space.png')}}" alt="company">
+                    <img src="{{asset('assets/img/company/space.png')}}" alt="company">
                     @endif
                     <h4 class="name_company">
                         @if ($toArray['company']==1)

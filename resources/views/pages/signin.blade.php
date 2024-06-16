@@ -27,7 +27,7 @@
                 </form>
             </div>
        
-            <img src="{{asset('public/assets/img/background/sign.png')}}" alt="moon">
+            <img src="{{asset('/assets/img/background/sign.png')}}" alt="moon">
         </section>
     </div>
 </main>

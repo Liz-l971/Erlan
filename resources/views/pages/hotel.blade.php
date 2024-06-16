@@ -77,7 +77,7 @@
                {{$hotel->name}}
             </h2>
             <div class="main_info_about_hotel_item">
-                <img src="/public{{$hotel->imageHotel()}}{{$hotel->img}}" class="big_img_hotel" alt="">
+                <img src="{{$hotel->imageHotel()}}{{$hotel->img}}" class="big_img_hotel" alt="">
                 <div class="right_block_info_hotel">
                     <div class="admin_btn white_cur">
                         <a href="" class="edit"><img src="../assets/img/icons/edit.svg" alt=""></a>
@@ -104,60 +104,60 @@
                         @foreach ($arrayTerms as $item)
                            @if ( trim($item) == 'КОНФЕРЕНЦ-ЗАЛ')
                            
-                           <img src="{{asset('public/assets/img/icons/ZAL.svg')}}" alt="">
+                           <img src="{{asset('/assets/img/icons/ZAL.svg')}}" alt="">
                            @endif
 
                            @if ( trim($item) == 'ДИСКОТЕКА')
                            
-                           <img src="{{asset('public/assets/img/icons/DISKO.svg')}}" alt="">
+                           <img src="{{asset('/assets/img/icons/DISKO.svg')}}" alt="">
 
                            @endif
 
                            @if ( trim($item) == 'БАССЕЙН')
                            
-                           <img src="{{asset('public/assets/img/icons/SWIM.svg')}}" alt="">
+                           <img src="{{asset('/assets/img/icons/SWIM.svg')}}" alt="">
                            
                            @endif
 
                            @if ( trim($item) == 'САУНА')
                            
-                           <img src="{{asset('public/assets/img/icons/SAUNA.svg')}}" alt="">
+                           <img src="{{asset('/assets/img/icons/SAUNA.svg')}}" alt="">
                            
                            @endif
 
                            @if ( trim($item) == 'РЕСТОРАН')
                            
-                           <img src="{{asset('public/assets/img/icons/RESTAUTANT.svg')}}" alt="">
+                           <img src="{{asset('/assets/img/icons/RESTAUTANT.svg')}}" alt="">
                            
                            @endif
 
                            @if ( trim($item) == 'УСЛУГИ НЯНИ')
                            
-                           <img src="{{asset('public/assets/img/icons/mdi_mom.svg')}}" alt="">
+                           <img src="{{asset('/assets/img/icons/mdi_mom.svg')}}" alt="">
                            
                            @endif
 
                            @if ( trim($item) == 'КОНСЬЕРЖ')
                            
-                           <img src="{{asset('public/assets/img/icons/KONSILIERGE.svg')}}" alt="">
+                           <img src="{{asset('/assets/img/icons/KONSILIERGE.svg')}}" alt="">
                            
                            @endif
 
                            
                            @if ( trim($item) == 'СПА-САЛОН')
                            
-                           <img src="{{asset('public/assets/img/icons/SPA.svg')}}" alt="">
+                           <img src="{{asset('/assets/img/icons/SPA.svg')}}" alt="">
                            
                            @endif
 
 
                         @endforeach
                       
-                        {{-- <img src="{{asset('public/assets/img/icons/ic_baseline-wifi.svg')}}" alt=""> --}}
-                        {{-- <img src="{{asset('public/assets/img/icons/maki_nightclub.svg')}}" alt="">
-                        <img src="{{asset('public/assets/img/icons/mdi_swim.svg')}}" alt="">
-                        <img src="{{asset('public/assets/img/icons/ph_disco-ball.svg')}}" alt="">
-                        <img src="{{asset('public/assets/img/icons/solar_volleyball-bold.svg')}}" alt=""> --}}
+                        {{-- <img src="{{asset('/assets/img/icons/ic_baseline-wifi.svg')}}" alt=""> --}}
+                        {{-- <img src="{{asset('/assets/img/icons/maki_nightclub.svg')}}" alt="">
+                        <img src="{{asset('/assets/img/icons/mdi_swim.svg')}}" alt="">
+                        <img src="{{asset('/assets/img/icons/ph_disco-ball.svg')}}" alt="">
+                        <img src="{{asset('/assets/img/icons/solar_volleyball-bold.svg')}}" alt=""> --}}
                     </div>
                     <a href="./catalog_flight.html" class="white_btn white_cur">выбрать</a>
                 </div>
@@ -172,7 +172,7 @@
             <div class="right_catalog_hotel">
                 <div class="catalog_hotel_flex">
                     <div class="catalog_info_hotel " >
-                        <img src="/public{{$hotel->imageHotel()}}{{$hotel->img}}" class="img_hotel_catalog" alt="">
+                        <img src="{{$hotel->imageHotel()}}{{$hotel->img}}" class="img_hotel_catalog" alt="">
                         
                         <div class="text_info_hotel_mobile ">
                             <div class="text_info_hotel">
@@ -207,11 +207,11 @@
                                         включая обязательные доплаты 0 рублей
                                     </p>
                                     <div class="icons">
-                                        <img src="{{asset('public/assets/img/icons/ic_baseline-wifi.svg')}}" alt="">
-                                        <img src="{{asset('public/assets/img/icons/maki_nightclub.svg')}}" alt="">
-                                        <img src="{{asset('public/assets/img/icons/mdi_swim.svg')}}" alt="">
-                                        <img src="{{asset('public/assets/img/icons/ph_disco-ball.svg')}}" alt="">
-                                        <img src="{{asset('public/assets/img/icons/solar_volleyball-bold.svg')}}" alt="">
+                                        <img src="{{asset('/assets/img/icons/ic_baseline-wifi.svg')}}" alt="">
+                                        <img src="{{asset('/assets/img/icons/maki_nightclub.svg')}}" alt="">
+                                        <img src="{{asset('/assets/img/icons/mdi_swim.svg')}}" alt="">
+                                        <img src="{{asset('/assets/img/icons/ph_disco-ball.svg')}}" alt="">
+                                        <img src="{{asset('/assets/img/icons/solar_volleyball-bold.svg')}}" alt="">
                                     </div>
                                 </div>
                                 
@@ -275,13 +275,13 @@
             <!-- слайды -->
 
             <div class="slide">
-                <img src="/public{{$item->imageNumber()}}{{$item->img_one}}" class="img_inside_number" alt="">
+                <img src="{{$item->imageNumber()}}{{$item->img_one}}" class="img_inside_number" alt="">
             </div>
             <div class="slide">
-                <img src="/public{{$item->imageNumber()}}{{$item->img_two}}" class="img_inside_number" alt="">
+                <img src="{{$item->imageNumber()}}{{$item->img_two}}" class="img_inside_number" alt="">
             </div>
             <div class="slide">
-                <img src="/public{{$item->imageNumber()}}{{$item->img_three}}" class="img_inside_number" alt="">
+                <img src="{{$item->imageNumber()}}{{$item->img_three}}" class="img_inside_number" alt="">
             </div>
             <!-- стрелки -->
             <div class="arrow left">

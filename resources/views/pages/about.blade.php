@@ -52,13 +52,13 @@
                                                 <!-- слайды -->
                                                 <div class="slide">
                                                     
-                                                    <img src="/public/storage/ships/{{$item->img_one}}" class="ship" alt="">
+                                                    <img src="/storage/ships/{{$item->img_one}}" class="ship" alt="">
                                                 </div>
                                                 <div class="slide">
-                                                    <img src="/public/storage/ships/{{$item->img_two}}" class="ship" alt="">
+                                                    <img src="/storage/ships/{{$item->img_two}}" class="ship" alt="">
                                                 </div>
                                                 <div class="slide">
-                                                    <img src="/public/storage/ships/{{$item->img_three}}" class="ship" alt="">
+                                                    <img src="/storage/ships/{{$item->img_three}}" class="ship" alt="">
                                                 </div>
                                                 <!-- стрелки -->
                                                 <div class="arrow left">
@@ -111,13 +111,13 @@
                                                 <!-- слайды -->
                                                 <div class="slide">
                                                     
-                                                    <img src="/public/storage/ships/{{$item->img_one}}" class="ship" alt="">
+                                                    <img src="/storage/ships/{{$item->img_one}}" class="ship" alt="">
                                                 </div>
                                                 <div class="slide">
-                                                    <img src="/public/storage/ships/{{$item->img_two}}" class="ship" alt="">
+                                                    <img src="/storage/ships/{{$item->img_two}}" class="ship" alt="">
                                                 </div>
                                                 <div class="slide">
-                                                    <img src="/public/storage/ships/{{$item->img_three}}" class="ship" alt="">
+                                                    <img src="/storage/ships/{{$item->img_three}}" class="ship" alt="">
                                                 </div>
                                                 <!-- стрелки -->
                                                 <div class="arrow left">
@@ -168,13 +168,13 @@
                                                 <!-- слайды -->
                                                 <div class="slide">
                                                     
-                                                    <img src="/public/storage/ships/{{$item->img_one}}" class="ship" alt="">
+                                                    <img src="/storage/ships/{{$item->img_one}}" class="ship" alt="">
                                                 </div>
                                                 <div class="slide">
-                                                    <img src="/public/storage/ships/{{$item->img_two}}" class="ship" alt="">
+                                                    <img src="/storage/ships/{{$item->img_two}}" class="ship" alt="">
                                                 </div>
                                                 <div class="slide">
-                                                    <img src="/public/storage/ships/{{$item->img_three}}" class="ship" alt="">
+                                                    <img src="/storage/ships/{{$item->img_three}}" class="ship" alt="">
                                                 </div>
                                                 <!-- стрелки -->
                                                 <div class="arrow left">
@@ -225,13 +225,13 @@
                                                 <!-- слайды -->
                                                 <div class="slide">
                                                     
-                                                    <img src="/public/storage/ships/{{$item->img_one}}" class="ship" alt="">
+                                                    <img src="/storage/ships/{{$item->img_one}}" class="ship" alt="">
                                                 </div>
                                                 <div class="slide">
-                                                    <img src="/public/storage/ships/{{$item->img_two}}" class="ship" alt="">
+                                                    <img src="/storage/ships/{{$item->img_two}}" class="ship" alt="">
                                                 </div>
                                                 <div class="slide">
-                                                    <img src="/public/storage/ships/{{$item->img_three}}" class="ship" alt="">
+                                                    <img src="/storage/ships/{{$item->img_three}}" class="ship" alt="">
                                                 </div>
                                                 <!-- стрелки -->
                                                 <div class="arrow left">
