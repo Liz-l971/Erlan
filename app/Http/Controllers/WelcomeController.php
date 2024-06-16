@@ -130,20 +130,21 @@ class WelcomeController extends Controller
         if (isset($filterHotel['cost_one']) && isset($filterHotel['cost_two'])) {
             $costOne = (int) $filterHotel['cost_one'];
             $costTwo = (int) $filterHotel['cost_two'];
+            if($lang==0){
+                $costOne = $costOne * 89;
+                $costTwo = $costTwo * 89;
+            }
+            if($lang==2){
+                $costOne = $costOne * 12;
+                $costTwo = $costTwo * 12;
+            }
             $query->whereBetween('numbers.cost', [$costOne, $costTwo]);
         } else {
             $filterHotel['cost_one'] = '';
             $filterHotel['cost_two'] = '';
         }
 
-        if($lang==0){
-            $costOne = $costOne * 89;
-            $costTwo = $costTwo * 89;
-        }
-        if($lang==2){
-            $costOne = $costOne * 12;
-            $costTwo = $costTwo * 12;
-        }
+  
         $query->where(function ($q) use ($filterHotel) {
             if (isset($filterHotel['ultra_all'])) {
                 $q->where('terms', 'like', '%Ультра всё включено%');
