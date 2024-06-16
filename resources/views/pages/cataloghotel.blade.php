@@ -4,14 +4,13 @@ Erlan
 @endsection
 @section('content')
 <script defer>
-
+let priceArray =[];
     function outputPrice(defaultString){
         let priceWrap = document.querySelectorAll(".pricee");
     let lang = localStorage.getItem('lang');
     console.log(lang);
     let result =defaultString; 
-    let priceArray =[];
-    priceArray.push(lang);
+    
     if(lang==1){
        result = Number(defaultString) /89;
     }
@@ -22,7 +21,8 @@ Erlan
     if(lang==2){
        result =defaultString;
     }
-    console.log(defaultString)
+    priceArray.push(result);
+    // console.log(defaultString)
 
     for(let i = 0; i<priceWrap.length;i++ ){
         priceWrap[i].innerHTML = priceArray[i];
