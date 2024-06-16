@@ -122,6 +122,7 @@ class WelcomeController extends Controller
         $filterHotel = Session::get('filterhotel');
         $costOne = '';
         $costTwo = '';
+        $lang = Session::get('lang');
 
         $query = Hotel::join('numbers', 'hotels.id', '=', 'numbers.hotel')
             ->select('hotels.id', 'hotels.name', 'hotels.reiting', 'hotels.place', 'hotels.feed', 'hotels.concepc', 'numbers.cost', 'hotels.img');
@@ -181,9 +182,9 @@ class WelcomeController extends Controller
 
         $hotels = $query->get();
 
+ 
 
-
-        return view('pages.cataloghotel', compact('hotels', 'search', 'filterHotel'));
+        return view('pages.cataloghotel', compact('hotels', 'search', 'filterHotel','lang'));
     }
 
     public function profile()
@@ -299,5 +300,13 @@ class WelcomeController extends Controller
 
     public function allTourists(){
         return Tourist::where('id_user',auth()->user()->id)->get();
+    }
+
+    public function changeValute(Request $request){
+
+        Session::put('lang',$request->lang);
+        
+        return redirect()->back();
+
     }
 }

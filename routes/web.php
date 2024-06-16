@@ -35,6 +35,7 @@ Route::group(['middleware' => 'checkStatus'], function () {
 Route::get('/bron','bron')->name('bron');
 Route::get('/allTourists','allTourists')->name('allTourists');
 Route::get('/about','about')->name('about');
+Route::post('/changeValute','changeValute')->name('changeValute');
 
 
     });
