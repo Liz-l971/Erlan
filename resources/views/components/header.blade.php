@@ -9,7 +9,7 @@
                 ERLAN
             </div>
             <nav>
-                <?if(!isset($_SESSION['lang'])):?>
+                <?if(isset($_SESSION['lang'])&&$_SESSION['lang']==0):?>
                 <form action="/changeValute" method="POST" class="nav_item" style="display: flex;">
                     @csrf
                   
@@ -26,6 +26,10 @@
                     </button>
                 </form>
                 <?endif;?>
+
+
+                <?if(!isset($_SESSION['lang'])||$_SESSION['lang']==1):?>
+
                 <form action="/changeValute" method="POST" class="nav_item" style="display: flex;">
                     @csrf
                   
@@ -41,6 +45,9 @@
                             </p>
                     </button>
                 </form>
+                <?endif;?>
+                <?if(isset($_SESSION['lang'])&&$_SESSION['lang']==2):?>
+
                 <form action="/changeValute" method="POST" class="nav_item" style="display: flex;">
                     @csrf
                   
@@ -60,7 +67,8 @@
                     </button>
                 </form>
             
-                    
+                <?endif;?>
+
 
                 <button class="sidebar_toggler sidebar_togglermob">
                     <div class="">
