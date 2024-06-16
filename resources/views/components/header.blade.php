@@ -1,79 +1,4 @@
-{{-- <header>
-    <div class="container">
-        <div class="header_content">
-            <div class="logo">
-                ERLAN
-            </div>
-            <nav>
-                <div class="nav_item" style="display: flex;">
-                    <svg width="28" height="28" class="desktop" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M13.7498 6.1001V21.4001M17.5748 10.5626C17.5748 8.8031 15.8625 7.3751 13.7498 7.3751C11.6371 7.3751 9.9248 8.8031 9.9248 10.5626C9.9248 12.3221 11.6371 13.7501 13.7498 13.7501C15.8625 13.7501 17.5748 15.1781 17.5748 16.9376C17.5748 18.6971 15.8625 20.1251 13.7498 20.1251C11.6371 20.1251 9.9248 18.6971 9.9248 16.9376" stroke="white" stroke-width="2" stroke-linecap="round" />
-                        <path d="M7.375 2.70597C9.31239 1.58511 11.5117 0.996566 13.75 1.00002C20.7918 1.00002 26.5 6.70819 26.5 13.75C26.5 20.7918 20.7918 26.5 13.75 26.5C6.70818 26.5 1 20.7918 1 13.75C1 11.4282 1.62093 9.24927 2.70595 7.37502" stroke="white" stroke-width="2" stroke-linecap="round" />
-                        </svg>
-                    <p class="name_valute">
-                        USD.
-                    </p>
-                </div>
-                <a href="./src/pages/catalog_hotel.html" class="time_item">
-                    каталог
-                </a>
-                <button class="sidebar_toggler">
-                    <div class="">
-                        <svg width="78" height="15" viewBox="0 0 78 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M2 2H76" stroke="white" stroke-width="4" stroke-linecap="round" />
-                            <path d="M2 13.5H76" stroke="white" stroke-width="4" stroke-linecap="round" />
-                        </svg>
-                    </div> <!-- Иконка бургера -->
-                </button>
-                <div class="sidebar" id="sidebar">
-                    <span class="close_btn" id="close_btn">&times;</span><!-- Кнопка закрытия -->
-                    <div class="menu_burder_contetn">
-                        @auth
-                        <a href="/profile" class="profile">
-                            <h5 class="name_user">
-                                {{auth()->user()->surname}} {{auth()->user()->name}}
-                            </h5>
-                            <div class="profile_link">
-                                <p class="profile_p">
-                                    профиль
-                                </p>
-                                <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 1L8 7.5L1 14"  stroke-width="1.1" stroke-linecap="square" stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                        </a>
-                            
-                        @endauth
-                    
-                        <div class="gap user">
-                            <a href="/" class="burger_item">забронировать</a>
-                            <a href="" class="burger_item">мои брони</a>
-                            <a href="" class="burger_item">мои пассажиры</a>
-                        </div>
-                        @if (!auth()->user())
-                        <div class="gap nouser">
-                            <a href="/sign-in" class="burger_item">войти в аккаунт</a>
-                       
-                        </div>
-                        @endif
-                      
-                        <hr class="line_burger">
-                        <div class="gap">
-                            <a href="" class="little_text">о компании</a>
-                            <a href="" class="little_text">новости</a>
-                            <a href="" class="little_text">частые вопросы</a>
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="content" id="content">
-                 
-                </div>
-        
-            </nav>
-        </div>
-    </div>
-</header> --}}
+
 
 <div id="cursor" class="desktop"></div>
 <div id="aura" class="desktop"></div>
@@ -84,7 +9,7 @@
                 ERLAN
             </div>
             <nav>
-             
+                <?if(!isset($_SESSION['lang'])):?>
                 <form action="/changeValute" method="POST" class="nav_item" style="display: flex;">
                     @csrf
                   
@@ -100,6 +25,7 @@
                             </p>
                     </button>
                 </form>
+                <?endif;?>
                 <form action="/changeValute" method="POST" class="nav_item" style="display: flex;">
                     @csrf
                   
