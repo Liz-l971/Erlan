@@ -383,11 +383,11 @@
                                             @if ($lang == 1)
                                             {{ $item->freeNumber() }}
                                         @endif
-                                        @if ($lang == 2)
-                                            {{ $item->freeNumber() / 89 }}
+                                        @if ($lang == 0)
+                                            {{ floor($item->freeNumber() / 89) }}
                                         @endif
                                         @if ($lang == 2)
-                                            {{ $item->freeNumber() / 12 }}
+                                            {{ floor($item->freeNumber() / 12 )}}
                                         @endif
                                             @endif
                                             @if (!isset($lang))
