@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Http\Requests\AddTouristRequest;
 use App\Models\Tourist;
@@ -13,6 +13,7 @@ use Illuminate\Console\View\Components\Choice;
 use App\Models\Race;
 use Carbon\Carbon;
 use App\Models\Bron;
+use App\Mail\SampleMail;
 
 
 class UserActionController extends Controller
@@ -118,6 +119,8 @@ class UserActionController extends Controller
             'tourists_id'=>$tourists_str
             
         ]);
+
+        Mail::to('ivanovaliza0053@gmail.com')->send(new SampleMail('Пример тема','текст примера темы'));
         // session()->forget('tourists');
         // session()->forget('search');
         // session()->forget('filterhotel');
