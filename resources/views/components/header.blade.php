@@ -232,7 +232,7 @@
                 </form>
             
                 <?endif;?>
-                <div class="nav_item" style="display: flex;">
+                <div class="nav_item" style="display: flex;width:0;">
         
                 </div>
                 {{-- <div class="nav_item" tyle="display: flex;">
@@ -274,9 +274,10 @@
                 <div class="sidebar desktop" id="sidebar">
                     <span class="close_btn" id="close_btn">&times;</span><!-- Кнопка закрытия -->
                     <div class="menu_burder_contetn">
-                        <a href="./src/pages/profile.html" class="profile">
+                        @auth
+                        <a href="/profile" class="profile">
                             <h5 class="name_user">
-                                Гейдур диана
+                                {{auth()->user()->surname}} {{auth()->user()->name}}
                             </h5>
                             <div class="profile_link">
                                 <p class="profile_p">
@@ -287,20 +288,19 @@
                                 </svg>
                             </div>
                         </a>
+                            
+                        @endauth
                         <div class="gap user">
-                            <a href="" class="burger_item">забронировать</a>
+                            <a href="/" class="burger_item">забронировать</a>
                             <a href="" class="burger_item">мои брони</a>
-                            <a href="" class="burger_item">мои пассажиры</a>
                         </div>
                         <div class="gap nouser">
-                            <a href="./src/pages/autorization.html" class="burger_item">войти в аккаунт</a>
+                            <a href="/sign-in" class="burger_item">войти в аккаунт</a>
                        
                         </div>
                         <hr class="line_burger">
                         <div class="gap">
-                            <a href="" class="little_text">о компании</a>
-                            <a href="" class="little_text">новости</a>
-                            <a href="" class="little_text">частые вопросы</a>
+                            <a href="/about" class="little_text">о компании</a>
                         </div>
                         
                     </div>
