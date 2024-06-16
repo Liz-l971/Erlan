@@ -43,6 +43,7 @@ class UserActionController extends Controller
 
 
         $idNumber = Session::get('number')['id_number'];
+        $search = Session::get('search');
         $number =  Number::where('id', $idNumber)->first();
         $costNumber = $number['cost'];
 
@@ -126,7 +127,7 @@ class UserActionController extends Controller
         // session()->forget('filterhotel');
         // session()->forget('filterFlight');
             
-            return view('pages.bron',compact('bron'));
+            return view('pages.bron',compact('bron','search'));
         }
  
     }
