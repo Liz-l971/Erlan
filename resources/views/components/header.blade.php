@@ -232,7 +232,7 @@
                 </form>
             
                 <?endif;?>
-                <div class="nav_item" style="display: flex;">
+                {{-- <div class="nav_item" style="display: flex;">
                     <svg width="28" height="28" class="desktop" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13.7498 6.1001V21.4001M17.5748 10.5626C17.5748 8.8031 15.8625 7.3751 13.7498 7.3751C11.6371 7.3751 9.9248 8.8031 9.9248 10.5626C9.9248 12.3221 11.6371 13.7501 13.7498 13.7501C15.8625 13.7501 17.5748 15.1781 17.5748 16.9376C17.5748 18.6971 15.8625 20.1251 13.7498 20.1251C11.6371 20.1251 9.9248 18.6971 9.9248 16.9376" stroke="white" stroke-width="2" stroke-linecap="round" />
                         <path d="M7.375 2.70597C9.31239 1.58511 11.5117 0.996566 13.75 1.00002C20.7918 1.00002 26.5 6.70819 26.5 13.75C26.5 20.7918 20.7918 26.5 13.75 26.5C6.70818 26.5 1 20.7918 1 13.75C1 11.4282 1.62093 9.24927 2.70595 7.37502" stroke="white" stroke-width="2" stroke-linecap="round" />
@@ -240,7 +240,7 @@
                     <p class="name_valute">
                         USD.
                     </p>
-                </div>
+                </div> --}}
                 {{-- <div class="nav_item" tyle="display: flex;">
                     <svg width="32" class="desktop" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16 31C24.2843 31 31 24.2843 31 16C31 7.71573 24.2843 1 16 1C7.71573 1 1 7.71573 1 16C1 24.2843 7.71573 31 16 31Z" stroke="white" stroke-width="2" />
