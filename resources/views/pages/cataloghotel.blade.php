@@ -353,7 +353,7 @@ Erlan
                                     </p>
                                     <div class="price_main">
                                         <p class="price_number">
-                                            
+
                                             <script>outputPrice({{$item->feed}})</script>
                                         </p>
                                         <div class="valute">
@@ -383,7 +383,7 @@ Erlan
                             <div class="price_main">
                                 <p class="price_number pricee" id="price">
                                  {{$item->freeNumber()}}
-                                    
+                                   <?php echo "<script>outputPrice({{$item->feed}})</script>"
                                 </p>
                                 <div class="valute">
                                     <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
