@@ -120,7 +120,7 @@ class UserActionController extends Controller
             
         ]);
 
-        Mail::to(auth()->user()->email)->send(new SampleMail('Пример тема','текст примера темы'));
+        Mail::to(auth()->user()->email)->send(new SampleMail('Ваш билет на полёт',$bron));
         // session()->forget('tourists');
         // session()->forget('search');
         // session()->forget('filterhotel');

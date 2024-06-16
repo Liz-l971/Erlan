@@ -7,27 +7,31 @@
         <section class="banner">
             <div class="container">
                 <div class="banner_content">
-                    <form action="" class="banner_form">
-
-                        <select name="" class="banner_inp_one" id="">
-                            <option value disabled selected>Откуда</option>
-                            <option>байконур</option>
-                            <option>Starbase</option>
-                            <option>Вэньчан</option>
-                            <option>Канаверал</option>
+                    <form action="/searchMain" method="POST" class="banner_form desktop">
+                        @csrf
+                        <select name="from"  class="banner_inp_one" id="">
+                            <option value="{{$search['from']}}">{{$search['from']}}</option>
+                            <option>Откуда</option>
+                            <option value="байконур">байконур</option>
+                            <option value="Starbase">Starbase</option>
+                            <option value="Вэньчан">Вэньчан</option>
+                            <option value="Канаверал">Канаверал</option>
                         </select>
-                        <select name="" class="banner_inp_one" id="">
-                            <option value disabled selected>Куда</option>
-                            <option>луна</option>
-                            <option>Международная космическая станция (МКС)</option>
-                            <option>Китайская модульная космическая станция (cms)</option>
-                            <option>Космическая станция Axiom Space</option>
+                        <select name="to"  class="banner_inp_one" id="">
+                            <option value="{{$search['to']}}">{{$search['to']}}</option>
+                            <option>Куда</option>
+                            <option value="луна">луна</option>
+                            <option value="Международная космическая станция (МКС)">Международная космическая станция (МКС)</option>
+                            <option value="Китайская модульная космическая станция (cms)">Китайская модульная космическая станция (cms)</option>
+                            <option value="Космическая станция Axiom Space">Космическая станция Axiom Space</option>
                         </select>
+            
+        
 
-                        <input type="date" class="banner_inp_two" placeholder="период вылета">
-                        <input type="text" class="banner_inp_three" placeholder="ночей">
-                        <input type="text" class="banner_inp_three" placeholder="чел">
-                        <button class="banner_btn">найти</button>
+                        <input type="date" name="date" value="{{$search['date']}}" class="banner_inp_two" placeholder="период вылета">
+                        <input type="text" name="nights" class="banner_inp_three" value="{{$search['nights']}}" placeholder="ночей">
+                        <input type="text" name="tourists" class="banner_inp_three" value="{{$search['tourists']}}" placeholder="чел">
+                        <button type="submit" class="banner_btn">найти</button>
                     </form>
                 </div>
             </div>
