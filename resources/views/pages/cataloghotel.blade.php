@@ -304,7 +304,7 @@
                     @foreach ($hotels as $item)
                         <div class="catalog_hotel_flex desktop">
                             <div class="catalog_info_hotel">
-                                <img src="public{{ $item->imageHotel() }}{{ $item->img }}" class="img_hotel_catalog"
+                                <img src="{{ $item->imageHotel() }}{{ $item->img }}" class="img_hotel_catalog"
                                     alt="">
                                 <div class="text_info_hotel desktop">
                                     <p class="name_hotel">
