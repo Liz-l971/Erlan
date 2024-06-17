@@ -21,4 +21,9 @@ class Bron extends Model
     public function numberBron(){
         return $this->belongsTo(Number::class,'number');
     }
+
+    public function user(){
+        return $this->belongsTo(User::class,'user_id');
+
+    }
 }

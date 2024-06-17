@@ -164,18 +164,20 @@
                                     <p class="link" onclick="openstate(event, 'block')">Забронированные</p>
                                     <p class="link" onclick="openstate(event, 'arh')">архивные</p>
                                 </div>
+
+                                @foreach ($brons as $item)
                                 <div class="ebanutsa" style="display: block;" id="all" >
                                     <div class="content_bron">
                                         <div class="hrum_hrum">
                                             <div class="flex_top">
                                                 <p class="name_bron">
-                                                    юзер: №00000 ИВанов иван иванович
+                                                    юзер: №{{$item->user->id}} {{$item->user->surname}} {{$item->user->name}} {{$item->user->patronymic}}
                                                 </p>
                                                 <p class="namber_order">
-                                                    зАКАЗ №:1222 2323 4444
+                                                    зАКАЗ №:{{$item->id}}
                                                 </p>
                                                 <p class="data_bron">
-                                                    Дата брони: 25.12.2204 12:34
+                                                    Дата брони: {{$item->created_at}}
                                                 </p>
                                             </div>
                                             
@@ -187,34 +189,47 @@
                                                     <div class="tet_a_tet">
                                                         <div class="column_time">
                                                             <p class="time">
-                                                                00.00.0000 <br>
-                                                                12:00
+                                                                {{ $item->raceFrom->time_otb }}
                                                             </p>
                                                             <p class="lit">
-                                                                Космодром байконур (г.Байконур)
+                                                                {{ $item->raceFrom->otcuda }}
                                                             </p>
                                                         </div>
-                                                        <svg width="40" height="7" viewBox="0 0 39 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <svg width="40" height="7" viewBox="0 0 39 7" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M39 3.5L34 0.613249V6.38675L39 3.5ZM0 4H34.5V3H0V4Z" fill="#9A9A9A" />
                                                         </svg>
                                                         <div class="column_time">
                                                             <p class="time">
-                                                                00.00.0000<br>
-                                                                12:00
+                                                                {{ $item->raceFrom->time_prib }}
+                
                                                             </p>
                                                             <p class="lit">
-                                                                Космодром Звездные врата
+                                                                {{ $item->raceFrom->cuda }}
+                
                                                             </p>
                                                         </div>
-                        
+                
                                                     </div>
                                                     <div class="hotel_info">
-                                                        
+                
                                                         <p class="name_hotel">
-                                                            rosscosmos
+                                                            {{ $item->company_from }}
+                                                            @if ($item->company_from == 1)
+                                                                Роскосмос
+                                                            @endif
+                                                            @if ($item->company_from == 2)
+                                                                SpaceX
+                                                            @endif
+                                                            @if ($item->company_from == 3)
+                                                                CNSA
+                                                            @endif
+                                                            @if ($item->company_from == 4)
+                                                                BLUE ORIGIN
+                                                            @endif
                                                         </p>
                                                         <p class="class_and_eat">
-                                                            эконом-класс
+                                                            {{ $item->class_from }}
                                                         </p>
                                                     </div>
                                                     <div class="time_info">
@@ -222,7 +237,7 @@
                                                             время полёта
                                                         </p>
                                                         <p class="class_and_eat">
-                                                            35д. 12ч.
+                                                            {{ $item->raceFrom->timeFly()}} д.
                                                         </p>
                                                     </div>
                                                     
@@ -358,18 +373,21 @@
                                         
                                     </div>
                                 </div>
-                                <div class="ebanutsa" id="block" >
+                                @endforeach
+                               
+                                @foreach ($bronsActive as $item)
+                                <div class="ebanutsa" style="display: block;" id="all" >
                                     <div class="content_bron">
                                         <div class="hrum_hrum">
                                             <div class="flex_top">
                                                 <p class="name_bron">
-                                                    юзер: №00000 ИВанов иван иванович
+                                                    юзер: №{{$item->user->id}} {{$item->user->surname}} {{$item->user->name}} {{$item->user->patronymic}}
                                                 </p>
                                                 <p class="namber_order">
-                                                    зАКАЗ №:1222 2323 4444
+                                                    зАКАЗ №:{{$item->id}}
                                                 </p>
                                                 <p class="data_bron">
-                                                    Дата брони: 25.12.2204 12:34
+                                                    Дата брони: {{$item->created_at}}
                                                 </p>
                                             </div>
                                             
@@ -381,34 +399,47 @@
                                                     <div class="tet_a_tet">
                                                         <div class="column_time">
                                                             <p class="time">
-                                                                00.00.0000 <br>
-                                                                12:00
+                                                                {{ $item->raceFrom->time_otb }}
                                                             </p>
                                                             <p class="lit">
-                                                                Космодром байконур (г.Байконур)
+                                                                {{ $item->raceFrom->otcuda }}
                                                             </p>
                                                         </div>
-                                                        <svg width="40" height="7" viewBox="0 0 39 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <svg width="40" height="7" viewBox="0 0 39 7" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M39 3.5L34 0.613249V6.38675L39 3.5ZM0 4H34.5V3H0V4Z" fill="#9A9A9A" />
                                                         </svg>
                                                         <div class="column_time">
                                                             <p class="time">
-                                                                00.00.0000<br>
-                                                                12:00
+                                                                {{ $item->raceFrom->time_prib }}
+                
                                                             </p>
                                                             <p class="lit">
-                                                                Космодром Звездные врата
+                                                                {{ $item->raceFrom->cuda }}
+                
                                                             </p>
                                                         </div>
-                        
+                
                                                     </div>
                                                     <div class="hotel_info">
-                                                        
+                
                                                         <p class="name_hotel">
-                                                            rosscosmos
+                                                            {{ $item->company_from }}
+                                                            @if ($item->company_from == 1)
+                                                                Роскосмос
+                                                            @endif
+                                                            @if ($item->company_from == 2)
+                                                                SpaceX
+                                                            @endif
+                                                            @if ($item->company_from == 3)
+                                                                CNSA
+                                                            @endif
+                                                            @if ($item->company_from == 4)
+                                                                BLUE ORIGIN
+                                                            @endif
                                                         </p>
                                                         <p class="class_and_eat">
-                                                            эконом-класс
+                                                            {{ $item->class_from }}
                                                         </p>
                                                     </div>
                                                     <div class="time_info">
@@ -416,7 +447,7 @@
                                                             время полёта
                                                         </p>
                                                         <p class="class_and_eat">
-                                                            35д. 12ч.
+                                                            {{ $item->raceFrom->timeFly()}} д.
                                                         </p>
                                                     </div>
                                                     
@@ -552,18 +583,20 @@
                                         
                                     </div>
                                 </div>
-                                <div class="ebanutsa" id="arh" >
+                                @endforeach
+                                @foreach ($bronsDecline as $item)
+                                <div class="ebanutsa" style="display: block;" id="all" >
                                     <div class="content_bron">
                                         <div class="hrum_hrum">
                                             <div class="flex_top">
                                                 <p class="name_bron">
-                                                    юзер: №00000 ИВанов иван иванович
+                                                    юзер: №{{$item->user->id}} {{$item->user->surname}} {{$item->user->name}} {{$item->user->patronymic}}
                                                 </p>
                                                 <p class="namber_order">
-                                                    зАКАЗ №:1222 2323 4444
+                                                    зАКАЗ №:{{$item->id}}
                                                 </p>
                                                 <p class="data_bron">
-                                                    Дата брони: 25.12.2204 12:34
+                                                    Дата брони: {{$item->created_at}}
                                                 </p>
                                             </div>
                                             
@@ -575,34 +608,47 @@
                                                     <div class="tet_a_tet">
                                                         <div class="column_time">
                                                             <p class="time">
-                                                                00.00.0000 <br>
-                                                                12:00
+                                                                {{ $item->raceFrom->time_otb }}
                                                             </p>
                                                             <p class="lit">
-                                                                Космодром байконур (г.Байконур)
+                                                                {{ $item->raceFrom->otcuda }}
                                                             </p>
                                                         </div>
-                                                        <svg width="40" height="7" viewBox="0 0 39 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <svg width="40" height="7" viewBox="0 0 39 7" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M39 3.5L34 0.613249V6.38675L39 3.5ZM0 4H34.5V3H0V4Z" fill="#9A9A9A" />
                                                         </svg>
                                                         <div class="column_time">
                                                             <p class="time">
-                                                                00.00.0000<br>
-                                                                12:00
+                                                                {{ $item->raceFrom->time_prib }}
+                
                                                             </p>
                                                             <p class="lit">
-                                                                Космодром Звездные врата
+                                                                {{ $item->raceFrom->cuda }}
+                
                                                             </p>
                                                         </div>
-                        
+                
                                                     </div>
                                                     <div class="hotel_info">
-                                                        
+                
                                                         <p class="name_hotel">
-                                                            rosscosmos
+                                                            {{ $item->company_from }}
+                                                            @if ($item->company_from == 1)
+                                                                Роскосмос
+                                                            @endif
+                                                            @if ($item->company_from == 2)
+                                                                SpaceX
+                                                            @endif
+                                                            @if ($item->company_from == 3)
+                                                                CNSA
+                                                            @endif
+                                                            @if ($item->company_from == 4)
+                                                                BLUE ORIGIN
+                                                            @endif
                                                         </p>
                                                         <p class="class_and_eat">
-                                                            эконом-класс
+                                                            {{ $item->class_from }}
                                                         </p>
                                                     </div>
                                                     <div class="time_info">
@@ -610,7 +656,7 @@
                                                             время полёта
                                                         </p>
                                                         <p class="class_and_eat">
-                                                            35д. 12ч.
+                                                            {{ $item->raceFrom->timeFly()}} д.
                                                         </p>
                                                     </div>
                                                     
@@ -746,6 +792,7 @@
                                         
                                     </div>
                                 </div>
+                                @endforeach
                                     
                                 </div>
                             </div>

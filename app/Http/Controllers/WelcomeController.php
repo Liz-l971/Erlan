@@ -213,7 +213,10 @@ class WelcomeController extends Controller
             $usersB = User::where('status', 0)->get();
             $hotels = Hotel::all();
             $ships = Ship::all();
-            return view('pages.admin', compact('users', 'usersB', 'hotels', 'ships'));
+            $bronsDecline = Bron::where('status','0')->get();
+            $bronsActive = Bron::where('status','1')->get();
+            $brons = Bron::all();
+            return view('pages.admin', compact('users', 'usersB', 'hotels', 'ships','bronsDecline','bronsActive','brons'));
         }
     }
 
