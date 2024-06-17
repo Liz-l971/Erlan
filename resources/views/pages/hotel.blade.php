@@ -459,7 +459,7 @@
                             <input type="text" class="add_input" placeholder="название отзыва" name="name">
                             <input type="text" class="add_input" placeholder="напишите отзыв" name="text">
                             <div class="add_lab">
-                               <input type="hodden" id='reiting' name="reit">
+                               <input type="hidden" id='reiting' name="reit">
                                 <div class="rating">
                                     <span class="star" data-value="1">&#9733;</span>
                                     <span class="star" data-value="2">&#9733;</span>
