@@ -200,7 +200,7 @@ class WelcomeController extends Controller
     {
         if (auth()->user()->status != 2) {
             $brons = Bron::where('user_id',auth()->user()->id)->get();
-            $tourists =Tourist::where('id_user',auth()->user()->id)->orderBy('id','desc');
+            $tourists =Tourist::where('id_user',auth()->user()->id)->orderBy('id','desc')->get();
 
             return view('pages.profile',compact('brons','tourists'));
         } else if (auth()->user()->status == 2) {
@@ -224,20 +224,24 @@ class WelcomeController extends Controller
     public function hotel(Hotel $hotel)
     {
         $search = Session::get('search');
+        $lang = Session::get('lang');
         // Session::put('hotel',['id_hotel'=>$hotel->id]);
-        return view('pages.hotel', compact('hotel', 'search'));
+        return view('pages.hotel', compact('hotel', 'search','lang'));
     }
     public function flight($from, $to)
     {
         $search = Session::get('search');
         $fromRace = Race::where('id', $from)->first();
         $toRace = Race::where('id', $to)->first();
-        return view('pages.flight', compact('search', 'fromRace', 'toRace'));
+        $lang = Session::get('lang');
+        return view('pages.flight', compact('search', 'fromRace', 'toRace','lang'));
     }
     public function addturist()
     {
         // Session::unset('tourists');
         // Session::forget('tourists');
+        $lang = Session::get('lang');
+
         $search = Session::get('search');
         $tourists = Session::get('tourists');
 
@@ -277,6 +281,8 @@ class WelcomeController extends Controller
 
             $costTo = $from->cost_first;
         }
+
+
         $sum = $costTo + $costFrom;
 
 
@@ -292,7 +298,7 @@ class WelcomeController extends Controller
 
         $timeFlyTo = $dateToOtcuda->diffInDays($dateToCuda);
 
-        return view('pages.addturist', compact('search', 'tourists', 'costNumber', 'sum', 'from', 'to', 'hotel', 'classFrom', 'classTo', 'timeFlyFrom', 'timeFlyTo'));
+        return view('pages.addturist', compact('search', 'tourists', 'costNumber', 'sum', 'from', 'to', 'hotel', 'classFrom', 'classTo', 'timeFlyFrom', 'timeFlyTo','lang'));
     }
 
     public function bron()

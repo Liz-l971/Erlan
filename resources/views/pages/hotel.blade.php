@@ -311,7 +311,22 @@
                 </p>
                 <div class="price_main">
                     <p class="price_number">
+                        
+                        @if (isset($lang))
+                        @if ($lang == 1)
                         {{$item->cost}}
+                    @endif
+                    @if ($lang == 0)
+                        {{ floor($item->cost / 89) }}
+                    @endif
+                    @if ($lang == 2)
+                        {{ floor($item->cost / 12 )}}
+                    @endif
+                        @endif
+                        @if (!isset($lang))
+                        {{ $item->cost }}
+
+                        @endif
                     </p>
                     <div class="valute">
                         <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">

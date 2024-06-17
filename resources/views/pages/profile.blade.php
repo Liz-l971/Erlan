@@ -103,7 +103,7 @@ Erlan
                             {{-- <h4 class="name_block">
                                 Жена
                             </h4> --}}
-                            <form action="/addTuristProfile" class="add_turist_form">
+                            <form action="/addTuristProfile" class="add_turist_form" method="POST">
 
                                 @csrf
                                 <div class="display_flex">
@@ -121,7 +121,7 @@ Erlan
                                     {{$message}}
                                 @enderror
                                     <input type="text" placeholder="отчество"  value="{{old('patronymic')}}" name="patronymic" class="top_inputs">
-                                    patronymic
+                              
                                 </div>
                                 <div class="display_flex">
                                     <input type="date" placeholder="дата рождения" name="date" value="{{old('date')}}" class="data_inputs">

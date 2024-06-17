@@ -49,6 +49,7 @@ class UserActionController extends Controller
     }
 
     public function makeBron(){
+        $lang = Session::get('lang');
 
 
         $idNumber = Session::get('number')['id_number'];
@@ -136,7 +137,7 @@ class UserActionController extends Controller
         // session()->forget('filterhotel');
         // session()->forget('filterFlight');
             
-            return view('pages.bron',compact('bron','search'));
+            return view('pages.bron',compact('bron','search','lang'));
         }
  
     }
