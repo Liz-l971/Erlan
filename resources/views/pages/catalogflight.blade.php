@@ -167,11 +167,11 @@
     for ($i = 0; $i < count($dictionary); $i++) {
         $fromArray = json_decode($dictionary[$keys[$i]]['from'], true);
         $toArray = json_decode($dictionary[$keys[$i]]['to'], true);
-        $sum = $fromArray['cost_ec'] + $toArray['cost_ec'] + $costNumber;
-        $costOne = $flightFilter['cost_one_f'];
-        $costTwo = $flightFilter['cost_two_f'];
+        $sum = (int) ($fromArray['cost_ec'] + $toArray['cost_ec'] + $costNumber);
+        $costOne = (int) $flightFilter['cost_one_f'];
+        $costTwo = (int) $flightFilter['cost_two_f'];
         if($lang==0){
-            $sum = $sum * 89;
+            $sum =  $sum * 89;
                     $costTwo = $costTwo * 89;
                     $costOne =  $costOne * 89;
                 }
