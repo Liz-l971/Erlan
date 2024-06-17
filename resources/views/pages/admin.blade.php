@@ -409,7 +409,7 @@
                                 @endforeach
                                
                                 @foreach ($bronsActive as $item)
-                                <div class="ebanutsa" style="display: block;" id="all" >
+                                <div class="ebanutsa" style="display: block;" id="block" >
                                     <div class="content_bron">
                                         <div class="hrum_hrum">
                                             <div class="flex_top">
@@ -647,7 +647,7 @@
                                 </div>
                                 @endforeach
                                 @foreach ($bronsDecline as $item)
-                                <div class="ebanutsa" style="display: block;" id="all" >
+                                <div class="ebanutsa" style="display: block;" id="arh" >
                                     <div class="content_bron">
                                         <div class="hrum_hrum">
                                             <div class="flex_top">
