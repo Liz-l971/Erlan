@@ -59,6 +59,8 @@ Route::post('/changeValute','changeValute')->name('changeValute');
         Route::post('/addHotel','addHotel')->name('addHotel');
         Route::post('/addNumber','addNumber')->name('addNumber');
         Route::post('/addRace','addRace')->name('addRace');
+        Route::post('/changeBronStatus/{bron}','changeBronStatus')->name('changeBronStatus');
+        
 
     });
 

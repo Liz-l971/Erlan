@@ -385,12 +385,19 @@
                                                         </svg>
                                                     </div>
                                                 </div>
-                                                <button>
-                                                    <svg width="50" height="50" viewBox="0 0 50 50" class="btn_delete" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <rect width="50" height="50" fill="black" />
-                                                        <rect x="14" y="23" width="22" height="4" fill="white" />
-                                                    </svg>
-                                                </button>
+                                                @if ($item->status==0)
+                                                <form action="/changeBronStatus/{{$item->id}}" method="POST">
+                                                    @csrf
+                                                    <button type="submit">
+                                                        <svg width="50" height="50" viewBox="0 0 50 50" class="btn_delete" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="50" height="50" fill="black" />
+                                                            <rect x="14" y="23" width="22" height="4" fill="white" />
+                                                        </svg>
+                                                    </button>
+                                                </form>
+                                                @endif
+                                             
+                                             
                                                 <p class="name_pass">
                                                     Пасс.: {{$item->tourists_id}}
                                                 </p>
@@ -482,34 +489,46 @@
                                                     <div class="tet_a_tet">
                                                         <div class="column_time">
                                                             <p class="time">
-                                                                00.00.0000 <br>
-                                                                12:00
+                                                                {{ $item->raceTo->time_otb }}
                                                             </p>
                                                             <p class="lit">
-                                                                Космодром байконур (г.Байконур)
+                                                                {{ $item->raceTo->otcuda }}
                                                             </p>
                                                         </div>
-                                                        <svg width="40" height="7" viewBox="0 0 39 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <svg width="40" height="7" viewBox="0 0 39 7" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M39 3.5L34 0.613249V6.38675L39 3.5ZM0 4H34.5V3H0V4Z" fill="#9A9A9A" />
                                                         </svg>
                                                         <div class="column_time">
                                                             <p class="time">
-                                                                00.00.0000<br>
-                                                                12:00
+                                                                {{ $item->raceTo->time_prib }}
+                
                                                             </p>
                                                             <p class="lit">
-                                                                Космодром Звездные врата
+                                                                {{ $item->raceTo->cuda }}
                                                             </p>
                                                         </div>
-                        
+                
                                                     </div>
                                                     <div class="hotel_info">
-                                                        
+                
                                                         <p class="name_hotel">
-                                                            rosscosmos
+                                                            {{ $item->company_to }}
+                                                            @if ($item->company_to == 1)
+                                                                Роскосмос
+                                                            @endif
+                                                            @if ($item->company_to == 2)
+                                                                SpaceX
+                                                            @endif
+                                                            @if ($item->company_to == 3)
+                                                                CNSA
+                                                            @endif
+                                                            @if ($item->company_to == 4)
+                                                                BLUE ORIGIN
+                                                            @endif
                                                         </p>
                                                         <p class="class_and_eat">
-                                                            эконом-класс
+                                                            {{ $item->class_to }}
                                                         </p>
                                                     </div>
                                                     <div class="time_info">
@@ -517,7 +536,7 @@
                                                             время полёта
                                                         </p>
                                                         <p class="class_and_eat">
-                                                            35д. 12ч.
+                                                            {{ $item->raceTo->timeFly()}} д.
                                                         </p>
                                                     </div>
                                                     
@@ -531,78 +550,87 @@
                                                         <div class="tet_a_tet">
                                                             <div class="column_time">
                                                                 <p class="time">
-                                                                    00.00.0000
+                                                                    {{ $item->raceFrom->time_prib }}
                                                                 </p>
                                                                 <p class="lit">
                                                                     Дата заезда
                                                                 </p>
                                                             </div>
-                                                            <svg width="39" height="7" viewBox="0 0 39 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M39 3.5L34 0.613249V6.38675L39 3.5ZM0 4H34.5V3H0V4Z" fill="#9A9A9A" />
+                                                            <svg width="39" height="7" viewBox="0 0 39 7" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M39 3.5L34 0.613249V6.38675L39 3.5ZM0 4H34.5V3H0V4Z"
+                                                                    fill="#9A9A9A" />
                                                             </svg>
                                                             <div class="column_time">
                                                                 <p class="time">
-                                                                    00.00.0000
+                                                                    {{ $item->raceTo->time_otb }}
                                                                 </p>
                                                                 <p class="lit">
                                                                     Дата выезда
                                                                 </p>
                                                             </div>
-                                                            
-                            
+                
+                
                                                         </div>
                                                         <div class="hotel_info">
                                                             <div class="stars">
-                                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" fill="white" />
+                                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"
+                                                                        fill="white" />
                                                                 </svg>
-                                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" fill="white" />
+                                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"
+                                                                        fill="white" />
                                                                 </svg>
-                                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" fill="white" />
+                                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"
+                                                                        fill="white" />
                                                                 </svg>
-                                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" fill="white" />
+                                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"
+                                                                        fill="white" />
                                                                 </svg>
-                                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M12 15.39L8.24 17.66L9.23 13.38L5.91 10.5L10.29 10.13L12 6.09L13.71 10.13L18.09 10.5L14.77 13.38L15.76 17.66M22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.45 13.97L5.82 21L12 17.27L18.18 21L16.54 13.97L22 9.24Z" fill="white" />
+                                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M12 15.39L8.24 17.66L9.23 13.38L5.91 10.5L10.29 10.13L12 6.09L13.71 10.13L18.09 10.5L14.77 13.38L15.76 17.66M22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.45 13.97L5.82 21L12 17.27L18.18 21L16.54 13.97L22 9.24Z"
+                                                                        fill="white" />
                                                                 </svg>
                                                             </div>
                                                             <p class="name_hotel">
-                                                                Кафка плаза
+                                                                {{ $item->numberBron->hotelBron->name }}
                                                             </p>
                                                             <p class="class_and_eat">
-                                                                SUITE + FAMILY + DELUXE — ультра все включено
+                                                                {{ $item->numberBron->type }} - {{ $item->numberBron->hotelBron->feed }}
+                
                                                             </p>
                                                         </div>
-                                                        <div class="time_info">
-                                                            <p class="name_hotel">
-                                                                доп.услуги
-                                                            </p>
-                                                            <p class="class_and_eat">
-                                                                вино(на заказ), пиво
-                                                            </p>
-                                                        </div>
-                                                        
+                
+                
                                                     </div>
-                                                    <div class="white_block">
+                                                    <div class="white_block white_cur">
                                                         <p class="cost">
-                                                            00 000 000
+                                                            {{ $item->cost }}
                                                         </p>
-                                                        <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M12.7129 14.35C14.7259 14.35 16.658 13.6171 18.0838 12.3101C19.5099 11.0028 20.3129 9.22783 20.3129 7.375C20.3129 5.52217 19.5099 3.74719 18.0838 2.43993C16.658 1.13293 14.7259 0.4 12.7129 0.4H5.21289C4.92382 0.4 4.64504 0.505182 4.43821 0.69477C4.2311 0.884626 4.11289 1.14408 4.11289 1.41667V12.3167H1.21289C0.923825 12.3167 0.645036 12.4218 0.438212 12.6114C0.231096 12.8013 0.112891 13.0608 0.112891 13.3333C0.112891 13.6059 0.231096 13.8654 0.438212 14.0552C0.645036 14.2448 0.923825 14.35 1.21289 14.35H4.11289V15.9833H1.21289C0.923825 15.9833 0.645036 16.0885 0.438212 16.2781C0.231096 16.468 0.112891 16.7274 0.112891 17C0.112891 17.2726 0.231096 17.532 0.438212 17.7219C0.645035 17.9115 0.923825 18.0167 1.21289 18.0167H4.11289V21.5833C4.11289 21.8559 4.2311 22.1154 4.43821 22.3052C4.64504 22.4948 4.92383 22.6 5.21289 22.6C5.50196 22.6 5.78075 22.4948 5.98757 22.3052C6.19468 22.1154 6.31289 21.8559 6.31289 21.5833V18.0167H12.2129C12.502 18.0167 12.7807 17.9115 12.9876 17.7219C13.1947 17.532 13.3129 17.2726 13.3129 17C13.3129 16.7274 13.1947 16.468 12.9876 16.2781C12.7807 16.0885 12.502 15.9833 12.2129 15.9833H6.31289V14.35H12.7129ZM6.31289 2.43333H12.7129C14.1477 2.43333 15.5222 2.9559 16.5344 3.88372C17.5463 4.81127 18.1129 6.06734 18.1129 7.375C18.1129 8.68266 17.5463 9.93873 16.5344 10.8663C15.5222 11.7941 14.1477 12.3167 12.7129 12.3167H6.31289V2.43333Z" fill="black" stroke="black" stroke-width="0.2" />
+                                                        <svg width="21" height="23" viewBox="0 0 21 23" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M12.7129 14.35C14.7259 14.35 16.658 13.6171 18.0838 12.3101C19.5099 11.0028 20.3129 9.22783 20.3129 7.375C20.3129 5.52217 19.5099 3.74719 18.0838 2.43993C16.658 1.13293 14.7259 0.4 12.7129 0.4H5.21289C4.92382 0.4 4.64504 0.505182 4.43821 0.69477C4.2311 0.884626 4.11289 1.14408 4.11289 1.41667V12.3167H1.21289C0.923825 12.3167 0.645036 12.4218 0.438212 12.6114C0.231096 12.8013 0.112891 13.0608 0.112891 13.3333C0.112891 13.6059 0.231096 13.8654 0.438212 14.0552C0.645036 14.2448 0.923825 14.35 1.21289 14.35H4.11289V15.9833H1.21289C0.923825 15.9833 0.645036 16.0885 0.438212 16.2781C0.231096 16.468 0.112891 16.7274 0.112891 17C0.112891 17.2726 0.231096 17.532 0.438212 17.7219C0.645035 17.9115 0.923825 18.0167 1.21289 18.0167H4.11289V21.5833C4.11289 21.8559 4.2311 22.1154 4.43821 22.3052C4.64504 22.4948 4.92383 22.6 5.21289 22.6C5.50196 22.6 5.78075 22.4948 5.98757 22.3052C6.19468 22.1154 6.31289 21.8559 6.31289 21.5833V18.0167H12.2129C12.502 18.0167 12.7807 17.9115 12.9876 17.7219C13.1947 17.532 13.3129 17.2726 13.3129 17C13.3129 16.7274 13.1947 16.468 12.9876 16.2781C12.7807 16.0885 12.502 15.9833 12.2129 15.9833H6.31289V14.35H12.7129ZM6.31289 2.43333H12.7129C14.1477 2.43333 15.5222 2.9559 16.5344 3.88372C17.5463 4.81127 18.1129 6.06734 18.1129 7.375C18.1129 8.68266 17.5463 9.93873 16.5344 10.8663C15.5222 11.7941 14.1477 12.3167 12.7129 12.3167H6.31289V2.43333Z"
+                                                                fill="black" stroke="black" stroke-width="0.2" />
                                                         </svg>
                                                     </div>
                                                 </div>
-                                                <button>
-                                                    <svg width="50" height="50" viewBox="0 0 50 50" class="btn_delete" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <rect width="50" height="50" fill="black" />
-                                                        <rect x="14" y="23" width="22" height="4" fill="white" />
-                                                    </svg>
-                                                </button>
+                                             
                                                 <p class="name_pass">
-                                                    Пасс.: Гейдур Д.В., Шарафиева З.И., Иванова Е.О., Камсков Е.А. Ахметгалеев Р.А., Музипов А.Р.
+                                                    Пасс.: {{$item->tourists_id}}
                                                 </p>
                                             </div>
                                         </div>
@@ -691,34 +719,46 @@
                                                     <div class="tet_a_tet">
                                                         <div class="column_time">
                                                             <p class="time">
-                                                                00.00.0000 <br>
-                                                                12:00
+                                                                {{ $item->raceTo->time_otb }}
                                                             </p>
                                                             <p class="lit">
-                                                                Космодром байконур (г.Байконур)
+                                                                {{ $item->raceTo->otcuda }}
                                                             </p>
                                                         </div>
-                                                        <svg width="40" height="7" viewBox="0 0 39 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <svg width="40" height="7" viewBox="0 0 39 7" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M39 3.5L34 0.613249V6.38675L39 3.5ZM0 4H34.5V3H0V4Z" fill="#9A9A9A" />
                                                         </svg>
                                                         <div class="column_time">
                                                             <p class="time">
-                                                                00.00.0000<br>
-                                                                12:00
+                                                                {{ $item->raceTo->time_prib }}
+                
                                                             </p>
                                                             <p class="lit">
-                                                                Космодром Звездные врата
+                                                                {{ $item->raceTo->cuda }}
                                                             </p>
                                                         </div>
-                        
+                
                                                     </div>
                                                     <div class="hotel_info">
-                                                        
+                
                                                         <p class="name_hotel">
-                                                            rosscosmos
+                                                            {{ $item->company_to }}
+                                                            @if ($item->company_to == 1)
+                                                                Роскосмос
+                                                            @endif
+                                                            @if ($item->company_to == 2)
+                                                                SpaceX
+                                                            @endif
+                                                            @if ($item->company_to == 3)
+                                                                CNSA
+                                                            @endif
+                                                            @if ($item->company_to == 4)
+                                                                BLUE ORIGIN
+                                                            @endif
                                                         </p>
                                                         <p class="class_and_eat">
-                                                            эконом-класс
+                                                            {{ $item->class_to }}
                                                         </p>
                                                     </div>
                                                     <div class="time_info">
@@ -726,7 +766,7 @@
                                                             время полёта
                                                         </p>
                                                         <p class="class_and_eat">
-                                                            35д. 12ч.
+                                                            {{ $item->raceTo->timeFly()}} д.
                                                         </p>
                                                     </div>
                                                     
@@ -740,78 +780,95 @@
                                                         <div class="tet_a_tet">
                                                             <div class="column_time">
                                                                 <p class="time">
-                                                                    00.00.0000
+                                                                    {{ $item->raceFrom->time_prib }}
                                                                 </p>
                                                                 <p class="lit">
                                                                     Дата заезда
                                                                 </p>
                                                             </div>
-                                                            <svg width="39" height="7" viewBox="0 0 39 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M39 3.5L34 0.613249V6.38675L39 3.5ZM0 4H34.5V3H0V4Z" fill="#9A9A9A" />
+                                                            <svg width="39" height="7" viewBox="0 0 39 7" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M39 3.5L34 0.613249V6.38675L39 3.5ZM0 4H34.5V3H0V4Z"
+                                                                    fill="#9A9A9A" />
                                                             </svg>
                                                             <div class="column_time">
                                                                 <p class="time">
-                                                                    00.00.0000
+                                                                    {{ $item->raceTo->time_otb }}
                                                                 </p>
                                                                 <p class="lit">
                                                                     Дата выезда
                                                                 </p>
                                                             </div>
-                                                            
-                            
+                
+                
                                                         </div>
                                                         <div class="hotel_info">
                                                             <div class="stars">
-                                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" fill="white" />
+                                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"
+                                                                        fill="white" />
                                                                 </svg>
-                                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" fill="white" />
+                                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"
+                                                                        fill="white" />
                                                                 </svg>
-                                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" fill="white" />
+                                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"
+                                                                        fill="white" />
                                                                 </svg>
-                                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" fill="white" />
+                                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"
+                                                                        fill="white" />
                                                                 </svg>
-                                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M12 15.39L8.24 17.66L9.23 13.38L5.91 10.5L10.29 10.13L12 6.09L13.71 10.13L18.09 10.5L14.77 13.38L15.76 17.66M22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.45 13.97L5.82 21L12 17.27L18.18 21L16.54 13.97L22 9.24Z" fill="white" />
+                                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M12 15.39L8.24 17.66L9.23 13.38L5.91 10.5L10.29 10.13L12 6.09L13.71 10.13L18.09 10.5L14.77 13.38L15.76 17.66M22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.45 13.97L5.82 21L12 17.27L18.18 21L16.54 13.97L22 9.24Z"
+                                                                        fill="white" />
                                                                 </svg>
                                                             </div>
                                                             <p class="name_hotel">
-                                                                Кафка плаза
+                                                                {{ $item->numberBron->hotelBron->name }}
                                                             </p>
                                                             <p class="class_and_eat">
-                                                                SUITE + FAMILY + DELUXE — ультра все включено
+                                                                {{ $item->numberBron->type }} - {{ $item->numberBron->hotelBron->feed }}
+                
                                                             </p>
                                                         </div>
-                                                        <div class="time_info">
-                                                            <p class="name_hotel">
-                                                                доп.услуги
-                                                            </p>
-                                                            <p class="class_and_eat">
-                                                                вино(на заказ), пиво
-                                                            </p>
-                                                        </div>
-                                                        
+                
+                
                                                     </div>
-                                                    <div class="white_block">
+                                                    <div class="white_block white_cur">
                                                         <p class="cost">
-                                                            00 000 000
+                                                            {{ $item->cost }}
                                                         </p>
-                                                        <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M12.7129 14.35C14.7259 14.35 16.658 13.6171 18.0838 12.3101C19.5099 11.0028 20.3129 9.22783 20.3129 7.375C20.3129 5.52217 19.5099 3.74719 18.0838 2.43993C16.658 1.13293 14.7259 0.4 12.7129 0.4H5.21289C4.92382 0.4 4.64504 0.505182 4.43821 0.69477C4.2311 0.884626 4.11289 1.14408 4.11289 1.41667V12.3167H1.21289C0.923825 12.3167 0.645036 12.4218 0.438212 12.6114C0.231096 12.8013 0.112891 13.0608 0.112891 13.3333C0.112891 13.6059 0.231096 13.8654 0.438212 14.0552C0.645036 14.2448 0.923825 14.35 1.21289 14.35H4.11289V15.9833H1.21289C0.923825 15.9833 0.645036 16.0885 0.438212 16.2781C0.231096 16.468 0.112891 16.7274 0.112891 17C0.112891 17.2726 0.231096 17.532 0.438212 17.7219C0.645035 17.9115 0.923825 18.0167 1.21289 18.0167H4.11289V21.5833C4.11289 21.8559 4.2311 22.1154 4.43821 22.3052C4.64504 22.4948 4.92383 22.6 5.21289 22.6C5.50196 22.6 5.78075 22.4948 5.98757 22.3052C6.19468 22.1154 6.31289 21.8559 6.31289 21.5833V18.0167H12.2129C12.502 18.0167 12.7807 17.9115 12.9876 17.7219C13.1947 17.532 13.3129 17.2726 13.3129 17C13.3129 16.7274 13.1947 16.468 12.9876 16.2781C12.7807 16.0885 12.502 15.9833 12.2129 15.9833H6.31289V14.35H12.7129ZM6.31289 2.43333H12.7129C14.1477 2.43333 15.5222 2.9559 16.5344 3.88372C17.5463 4.81127 18.1129 6.06734 18.1129 7.375C18.1129 8.68266 17.5463 9.93873 16.5344 10.8663C15.5222 11.7941 14.1477 12.3167 12.7129 12.3167H6.31289V2.43333Z" fill="black" stroke="black" stroke-width="0.2" />
+                                                        <svg width="21" height="23" viewBox="0 0 21 23" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M12.7129 14.35C14.7259 14.35 16.658 13.6171 18.0838 12.3101C19.5099 11.0028 20.3129 9.22783 20.3129 7.375C20.3129 5.52217 19.5099 3.74719 18.0838 2.43993C16.658 1.13293 14.7259 0.4 12.7129 0.4H5.21289C4.92382 0.4 4.64504 0.505182 4.43821 0.69477C4.2311 0.884626 4.11289 1.14408 4.11289 1.41667V12.3167H1.21289C0.923825 12.3167 0.645036 12.4218 0.438212 12.6114C0.231096 12.8013 0.112891 13.0608 0.112891 13.3333C0.112891 13.6059 0.231096 13.8654 0.438212 14.0552C0.645036 14.2448 0.923825 14.35 1.21289 14.35H4.11289V15.9833H1.21289C0.923825 15.9833 0.645036 16.0885 0.438212 16.2781C0.231096 16.468 0.112891 16.7274 0.112891 17C0.112891 17.2726 0.231096 17.532 0.438212 17.7219C0.645035 17.9115 0.923825 18.0167 1.21289 18.0167H4.11289V21.5833C4.11289 21.8559 4.2311 22.1154 4.43821 22.3052C4.64504 22.4948 4.92383 22.6 5.21289 22.6C5.50196 22.6 5.78075 22.4948 5.98757 22.3052C6.19468 22.1154 6.31289 21.8559 6.31289 21.5833V18.0167H12.2129C12.502 18.0167 12.7807 17.9115 12.9876 17.7219C13.1947 17.532 13.3129 17.2726 13.3129 17C13.3129 16.7274 13.1947 16.468 12.9876 16.2781C12.7807 16.0885 12.502 15.9833 12.2129 15.9833H6.31289V14.35H12.7129ZM6.31289 2.43333H12.7129C14.1477 2.43333 15.5222 2.9559 16.5344 3.88372C17.5463 4.81127 18.1129 6.06734 18.1129 7.375C18.1129 8.68266 17.5463 9.93873 16.5344 10.8663C15.5222 11.7941 14.1477 12.3167 12.7129 12.3167H6.31289V2.43333Z"
+                                                                fill="black" stroke="black" stroke-width="0.2" />
                                                         </svg>
                                                     </div>
                                                 </div>
-                                                <button>
-                                                    <svg width="50" height="50" viewBox="0 0 50 50" class="btn_delete" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <rect width="50" height="50" fill="black" />
-                                                        <rect x="14" y="23" width="22" height="4" fill="white" />
-                                                    </svg>
-                                                </button>
+                                                <form action="/changeBronStatus/{{$item->id}}" method="POST">
+                                                    @csrf
+                                                    <button type="submit">
+                                                        <svg width="50" height="50" viewBox="0 0 50 50" class="btn_delete" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="50" height="50" fill="black" />
+                                                            <rect x="14" y="23" width="22" height="4" fill="white" />
+                                                        </svg>
+                                                    </button>
+                                                </form>
                                                 <p class="name_pass">
-                                                    Пасс.: Гейдур Д.В., Шарафиева З.И., Иванова Е.О., Камсков Е.А. Ахметгалеев Р.А., Музипов А.Р.
+                                                    Пасс.: {{$item->tourists_id}}
                                                 </p>
                                             </div>
                                         </div>

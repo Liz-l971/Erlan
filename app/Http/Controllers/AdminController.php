@@ -10,10 +10,16 @@ use App\Models\Hotel;
 use App\Models\Number;
 use App\Http\Requests\AddNumber;
 use App\Http\Requests\AddRaceRequest;
+use App\Models\Bron;
 use App\Models\Race;
 class AdminController extends Controller
 {
     //
+
+    public function changeBronStatus(Bron $bron){
+        $bron->update(['status'=>0]);
+        return redirect('/profile');
+    }
      public function addShip(AddShipRequest $request){
         $data = $request->validated();
 
