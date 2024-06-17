@@ -171,12 +171,12 @@
         $costOne = (int) $flightFilter['cost_one_f'];
         $costTwo = (int) $flightFilter['cost_two_f'];
         if($lang==0){
-            $sum =  $sum * 89;
+            $sum =  $sum / 89;
                     $costTwo = $costTwo * 89;
                     $costOne =  $costOne * 89;
                 }
                 if($lang==2){
-                    $sum = $sum * 12;
+                    $sum = $sum / 12;
                     $costTwo = $costTwo * 12;
                     $costOne =  $costOne * 12;
 
