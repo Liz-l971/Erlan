@@ -245,7 +245,7 @@
                                             <p class="name_ship">
                                                 {{$item->name}}
                                             </p>
-                                            <p class="opis_ship">
+                                            <p  class="opis_ship">
                                                 {{$item->description}}
                                             </p>
                                         </div>
