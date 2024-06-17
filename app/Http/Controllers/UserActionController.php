@@ -14,6 +14,8 @@ use App\Models\Race;
 use Carbon\Carbon;
 use App\Models\Bron;
 use App\Mail\SampleMail;
+use App\Models\Review;
+use App\Http\Requests\AddReviewRequest;
 
 
 class UserActionController extends Controller
@@ -141,4 +143,19 @@ class UserActionController extends Controller
         }
  
     }
+
+    public function addRewiew(AddReviewRequest $request, Hotel $hotel){
+
+        $data = $request->validated();
+
+        $data['id_user']= auth()->user()->id;
+        $data['id_hotel']= $hotel->id;
+
+        Review::create($data);
+
+        return redirect()->back();
+
+    }
+
+
 }

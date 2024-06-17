@@ -12,6 +12,7 @@ use Carbon\Carbon;
 use App\Models\Number;
 use App\Models\Tourist;
 use App\Models\Bron;
+use App\Models\Review;
 
 class WelcomeController extends Controller
 {
@@ -229,8 +230,9 @@ class WelcomeController extends Controller
     {
         $search = Session::get('search');
         $lang = Session::get('lang');
+        $reviews = Review::where('id_hotel',$hotel)->get();
         // Session::put('hotel',['id_hotel'=>$hotel->id]);
-        return view('pages.hotel', compact('hotel', 'search','lang'));
+        return view('pages.hotel', compact('hotel', 'search','lang','reviews'));
     }
     public function flight($from, $to)
     {
