@@ -52,7 +52,7 @@ class WelcomeController extends Controller
             $flightFilter['cost_two_f'] = '';
         }
 
-        $
+        
 
         $racesQ->where(function ($q) use ($flightFilter) {
             if (isset($flightFilter['ecomom'])) {
