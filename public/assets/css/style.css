@@ -8472,3 +8472,15 @@ footer .container .footer_content .footer_bottom .footer_name .footer_year {
 .about_company_block .about_content .block {
   display: block;
 }
+
+.add_reviews .container .add_container .add_wrapper .add_form .add_lab .rating {
+  display: inline-block;
+}
+.add_reviews .container .add_container .add_wrapper .add_form .add_lab .rating .star {
+  font-size: 72px;
+  color: grey;
+  cursor: pointer;
+}
+.add_reviews .container .add_container .add_wrapper .add_form .add_lab .rating .active {
+  color: rgb(255, 255, 255);
+}
