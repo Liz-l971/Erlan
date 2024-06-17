@@ -499,10 +499,10 @@ stars.forEach(star => {
         s.classList.remove('active');
       }
     });
+    console.log(value);
     
     selectedRating.innerText = value;
 
-    console.log(value);
   });
   
   star.addEventListener('mouseover', () => {
