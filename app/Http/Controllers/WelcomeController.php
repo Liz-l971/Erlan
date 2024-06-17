@@ -202,7 +202,7 @@ class WelcomeController extends Controller
             $brons = Bron::where('user_id',auth()->user()->id)->get();
             $tourists =Tourist::where('id_user',auth()->user()->id)->orderBy('id','desc');
 
-            return view('pages.profile',compact('brons'));
+            return view('pages.profile',compact('brons','tourists'));
         } else if (auth()->user()->status == 2) {
             $users = User::where('status', 1)->get();
             $usersB = User::where('status', 0)->get();
