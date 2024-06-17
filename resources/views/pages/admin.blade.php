@@ -3,11 +3,7 @@
     Админ-панель
 @endsection
 @section('content')
-    <?php
-    function formatDate($date, $format = 'd.m.y')
-    {
-        return date($format, strtotime($date));
-    } ?>
+
   <main>    
     <div class="admin_color">
         <div class="container">
@@ -78,7 +74,7 @@
                                                         {{$user->surname}} {{$user->name}} {{$user->patronymic}}
                                                     </p>
                                                     <p class="data_zareg">
-                                                        {{formatDate($user->created_at)}}
+                                                        {{$user->created_at}}
                                                     </p>
                                                     <p class="data_zaban">
                                                      
@@ -127,7 +123,7 @@
                                                         {{$user->surname}} {{$user->name}} {{$user->patronymic}}
                                                     </p>
                                                     <p class="data_zareg">
-                                                        {{formatDate($user->created_at)}}
+                                                        {{$user->created_at}}
                                                     </p>
                                                     <p class="data_zaban">
                                                         {{$user->data_ban}}
