@@ -3,13 +3,7 @@
     Erlan
 @endsection
 @section('content')
-    <?php
-    function formatDate($date, $format = 'd.m.y')
-    {
-        return date($format, strtotime($date));
-    }
-    
-    ?>
+
     <main>
         <section class="banner">
             <div class="container">
@@ -233,7 +227,7 @@
                                             {{ $fromArray['otcuda'] }}
                                         </h4>
                                         <p class="time_vilet">
-                                            {{ formatDate($fromArray['time_otb']) }}
+                                            {{ $fromArray['time_otb'] }}
                                         </p>
                                     </div>
                                     <svg width="67" height="2" viewBox="0 0 67 2" fill="none"
@@ -245,7 +239,7 @@
                                             {{ $fromArray['cuda'] }}
                                         </h4>
                                         <p class="time_vilet">
-                                            {{ formatDate($fromArray['time_prib']) }}
+                                            {{ $fromArray['time_prib'] }}
                                         </p>
                                     </div>
                                 </div>
@@ -294,7 +288,7 @@
                                             {{ $toArray['otcuda'] }}
                                         </h4>
                                         <p class="time_vilet">
-                                            {{ formatDate($toArray['time_otb']) }}
+                                            {{$toArray['time_otb'] }}
                                         </p>
                                     </div>
                                     <svg width="67" height="2" viewBox="0 0 67 2" fill="none"
@@ -306,7 +300,7 @@
                                             {{ $toArray['cuda'] }}
                                         </h4>
                                         <p class="time_vilet">
-                                            {{ formatDate($toArray['time_prib']) }}
+                                            {{$toArray['time_prib'] }}
                                         </p>
                                     </div>
                                 </div>
