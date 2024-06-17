@@ -462,14 +462,18 @@
                             @csrf
                             <input type="text" class="add_input" placeholder="название отзыва">
                             <input type="text" class="add_input" placeholder="напишите отзыв">
-                            <div class="rating">
-                                <span class="star" data-value="1">&#9733;</span>
-                                <span class="star" data-value="2">&#9733;</span>
-                                <span class="star" data-value="3">&#9733;</span>
-                                <span class="star" data-value="4">&#9733;</span>
-                                <span class="star" data-value="5">&#9733;</span>
+                            <div class="add_lab">
+                               
+                                <div class="rating">
+                                    <span class="star" data-value="1">&#9733;</span>
+                                    <span class="star" data-value="2">&#9733;</span>
+                                    <span class="star" data-value="3">&#9733;</span>
+                                    <span class="star" data-value="4">&#9733;</span>
+                                    <span class="star" data-value="5">&#9733;</span>
 </div>
 
+                                
+                            </div>
                             <input type="submit" value="отправить" class="add_sub white_cur">
                         </form>
                     </div>
@@ -478,7 +482,6 @@
         </section>
     </div>
 </main>
-
 <script>
     const stars = document.querySelectorAll('.star');
 const selectedRating = document.getElementById('selectedRating');
@@ -498,6 +501,8 @@ stars.forEach(star => {
     });
     
     selectedRating.innerText = value;
+
+    console.log(value);
   });
   
   star.addEventListener('mouseover', () => {
@@ -521,8 +526,8 @@ stars.forEach(star => {
       });
     }
   });
+
 });
 
 </script>
-
 @endsection('content')
