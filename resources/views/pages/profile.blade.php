@@ -100,37 +100,99 @@ Erlan
                             пассажиры
                         </h4>
                         <div class="qweweweq">
-                            <h4 class="name_block">
+                            {{-- <h4 class="name_block">
                                 Жена
-                            </h4>
-                            <form action="" class="add_turist_form">
+                            </h4> --}}
+                            <form action="/addTuristProfile" class="add_turist_form">
+
+                                @csrf
                                 <div class="display_flex">
-                                    <input type="text" placeholder="псевдоним(мама, муж)" value="жена" class="top_inputs">
-                                    <input type="text" placeholder="фамилия"  value="Иванова" class="top_inputs">
-                                    <input type="text" placeholder="Имя"  value="Иван" class="top_inputs">
-                                    <input type="text" placeholder="отчество"  value="Иванови" class="top_inputs">
+                                    <input type="text" placeholder="псевдоним(мама, муж)" name="psevdoname" value="{{old('name')}}" class="top_inputs">
+                                    @error('name')
+                                        {{$message}}
+                                    @enderror
+                                    <input type="text" placeholder="фамилия"  value="{{old('surname')}}" name="surname" class="top_inputs">
+                                    @error('surname')
+                                    {{$message}}
+                                @enderror
+                                    <input type="text" placeholder="Имя"  value="{{old('name')}}" name="name" class="top_inputs">
+
+                                    @error('name')
+                                    {{$message}}
+                                @enderror
+                                    <input type="text" placeholder="отчество"  value="{{old('patronymic')}}" name="patronymic" class="top_inputs">
+                                    patronymic
                                 </div>
                                 <div class="display_flex">
-                                    <input type="date" placeholder="дата рождения" class="data_inputs">
-                                    <select name=""  class="pol_inputs" id="">
-                                        <option value disabled selected>пол</option>
-                                        <option>м</option>
-                                        <option>ж</option>
+                                    <input type="date" placeholder="дата рождения" name="date" value="{{old('date')}}" class="data_inputs">
+                                    @error('date')
+                                    {{$message}}
+                                @enderror
+                                    <select name="gender"  class="pol_inputs" id="">
+                                        <option>пол</option>
+                                        <option value="м">м</option>
+                                        <option value="ж">ж</option>
                                     </select>
-                                    <select name=""  class="top_inputs" id="">
-                                        <option value disabled selected>гражданство</option>
-                                        <option>россия</option>
-                                        <option>Китай</option>
-                                        <option>Сша</option>
+                                    @error('gender')
+                                    {{$message}}
+                                @enderror
+                                    <select name="nation"  class="top_inputs" id="">
+                                        <option>гражданство</option>
+                                        <option value="россия"></option>
+                                        <option value="Китай"></option>
+                                        <option value="Сша"></option>
                                        
                                     </select>
-                                    <input type="text" placeholder="телефон" class="top_inputs">
+                                    @error('nation')
+                                    {{$message}}
+                                @enderror
+                                    <input type="text" placeholder="телефон"  value="{{old('number')}}" name="number" class="top_inputs">
+                                    @error('number')
+                                    {{$message}}
+                                @enderror
                                     
-                                    <input type="text" placeholder="электронная почта"class="top_inputs">
+                                    <input type="text" placeholder="электронная почта" value="{{old('email')}}" name="email" class="top_inputs">
+                                    @error('email')
+                                    {{$message}}
+                                @enderror
                                 </div>
-                                <button class="btn_add_turist">СОхранить</button>
+                                <button type="submit" class="btn_add_turist">СОхранить</button>
                             </form>
                         </div>
+                        @foreach ($tourists as $item)
+                        <div class="qweweweq">
+                            <h4 class="name_block">
+                                {{$item->psevdoname}}
+                            </h4>
+                            <div class="add_turist_form">
+                                <div class="display_flex">
+                                    <input type="text" placeholder="псевдоним(мама, муж)" name="psevdoname" value="{{$item->psevdoname}}" class="top_inputs" disabled>
+                                    <input type="text" placeholder="фамилия"  value="{{$item->surname}}" name="surname" class="top_inputs"  disabled>
+                                    <input type="text" placeholder="Имя"  value="{{$item->name}}" name="name" class="top_inputs"  disabled>
+                                    <input type="text" placeholder="отчество"  value="{{$item->patronymic}}" name="patronymic" class="top_inputs"  disabled >
+                                </div>
+                                <div class="display_flex">
+                                    <input type="date" placeholder="дата рождения" value="" name="date" class="data_inputs"  disabled>
+                                    <select name="gender"  class="pol_inputs" id="{{$item->date}}"  disabled>
+                                        <option>{{$item->gender}}</option>
+                                        <option value="м">м</option>
+                                        <option value="ж">ж</option>
+                                    </select>
+                                    <select name="nation"  class="top_inputs" id=""  disabled>
+                                        <option>{{$item->nation}}</option>
+                                        <option value="россия"></option>
+                                        <option value="Китай"></option>
+                                        <option value="Сша"></option>
+                                       
+                                    </select>
+                                    <input type="text" placeholder="телефон" value="{{$item->number}}"  name="number" class="top_inputs"  disabled>
+                                    
+                                    <input type="text" placeholder="электронная почта" name="email" value="{{$item->email}}" class="top_inputs"  disabled>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                        
                        
                     </div>
                 </div>

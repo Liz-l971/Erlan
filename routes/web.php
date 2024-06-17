@@ -77,6 +77,7 @@ Route::post('/changeValute','changeValute')->name('changeValute');
 
         Route::post('/addTurist/{count}','addTurist')->name('addTurist');
         Route::post('/makeBron','makeBron')->name('makeBron');
+        Route::post('/addTuristProfile','addTuristProfile')->name('addTuristProfile');
     });
 
 

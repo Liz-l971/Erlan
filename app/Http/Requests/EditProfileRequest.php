@@ -28,7 +28,7 @@ class EditProfileRequest extends FormRequest
             'patronymic'=>'',
             'date'=>'',
             'gender'=>'',
-            'number'=>'unique:users,number',
+            'number'=>'exists:users,number',
             'nation'=>'',
             'email'=>'',
         ];

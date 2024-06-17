@@ -20,11 +20,14 @@ class SearchController extends Controller
 
         $data = $request->validated();
 
-        Session::put('search', $data);
+        if(!auth()->user()){
+            return redirect('/sign-in');
+        }else{
+            Session::put('search', $data);
+            return redirect('/catalog-hotel');
+        }
 
         
-
-        return redirect('/catalog-hotel');
     }
 
     public function searchRace(SearchRequest $request)

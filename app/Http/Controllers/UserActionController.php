@@ -39,6 +39,15 @@ class UserActionController extends Controller
 
     }
 
+    public function addTuristProfile(AddTouristRequest $request,$count){
+
+        $data = $request->validated();
+        $data['id_user'] = auth()->user()->id;
+        Tourist::create($data);
+        return redirect('/profile');
+
+    }
+
     public function makeBron(){
 
 
