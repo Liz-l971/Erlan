@@ -385,7 +385,7 @@
                                                         </svg>
                                                     </div>
                                                 </div>
-                                                @if ($item->status==0)
+                                                @if ($item->status==1)
                                                 <form action="/changeBronStatus/{{$item->id}}" method="POST">
                                                     @csrf
                                                     <button type="submit">
@@ -628,7 +628,15 @@
                                                         </svg>
                                                     </div>
                                                 </div>
-                                             
+                                                <form action="/changeBronStatus/{{$item->id}}" method="POST">
+                                                    @csrf
+                                                    <button type="submit">
+                                                        <svg width="50" height="50" viewBox="0 0 50 50" class="btn_delete" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="50" height="50" fill="black" />
+                                                            <rect x="14" y="23" width="22" height="4" fill="white" />
+                                                        </svg>
+                                                    </button>
+                                                </form>
                                                 <p class="name_pass">
                                                     Пасс.: {{$item->tourists_id}}
                                                 </p>
@@ -858,15 +866,7 @@
                                                         </svg>
                                                     </div>
                                                 </div>
-                                                <form action="/changeBronStatus/{{$item->id}}" method="POST">
-                                                    @csrf
-                                                    <button type="submit">
-                                                        <svg width="50" height="50" viewBox="0 0 50 50" class="btn_delete" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <rect width="50" height="50" fill="black" />
-                                                            <rect x="14" y="23" width="22" height="4" fill="white" />
-                                                        </svg>
-                                                    </button>
-                                                </form>
+                                              
                                                 <p class="name_pass">
                                                     Пасс.: {{$item->tourists_id}}
                                                 </p>
