@@ -184,7 +184,9 @@
                                         тип питания: {{$hotel->name}}
                                     </p>
                                     <p class="more_info_hotel_p">
-                                        тип номера: стандарт, эко
+                                        тип номера: @foreach ($hotel->numbers() as $number)
+                                        {{ $number->type }},
+                                    @endforeach
                                     </p>
                                 </div>
                             </div>
@@ -195,7 +197,21 @@
                                     </p>
                                     <div class="price_main">
                                         <p class="price_number">
-                                            {{$hotel->freeNumber()}}
+                                            @if (isset($lang))
+                                            @if ($lang == 1)
+                                            {{ $hotel->freeNumber() }}
+                                        @endif
+                                        @if ($lang == 0)
+                                            {{ floor($hotel->freeNumber() / 89) }}
+                                        @endif
+                                        @if ($lang == 2)
+                                            {{ floor($hotel->freeNumber() / 12 )}}
+                                        @endif
+                                            @endif
+                                            @if (!isset($lang))
+                                            {{ $hotel->freeNumber() }}
+         
+                                            @endif
                                         </p>
                                         <div class="valute">
                                             <svg width="15" height="16" class="" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -217,9 +233,7 @@
                                 
                             </div>
                         </div>
-                        <a href="./hotel.html" class="choice_hotel mobile">
-                            выбрать
-                        </a>
+                      
                         
                     </div>
                     

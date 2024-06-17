@@ -132,10 +132,10 @@ class UserActionController extends Controller
         ]);
 
         Mail::to(auth()->user()->email)->send(new SampleMail('Ваш билет на полёт',$bron));
-        // session()->forget('tourists');
-        // session()->forget('search');
-        // session()->forget('filterhotel');
-        // session()->forget('filterFlight');
+        session()->forget('tourists');
+        session()->forget('search');
+        session()->forget('filterhotel');
+        session()->forget('filterFlight');
             
             return view('pages.bron',compact('bron','search','lang'));
         }

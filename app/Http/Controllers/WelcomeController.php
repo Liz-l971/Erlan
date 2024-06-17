@@ -43,12 +43,16 @@ class WelcomeController extends Controller
 
         $flightFilter = Session::get('flightFilter');
 
+        $lang = Session::get('lang');
+
         if (!isset($flightFilter['cost_one_f']) && !isset($flightFilter['cost_two_f'])) {
 
 
             $flightFilter['cost_one_f'] = '';
             $flightFilter['cost_two_f'] = '';
         }
+
+        $
 
         $racesQ->where(function ($q) use ($flightFilter) {
             if (isset($flightFilter['ecomom'])) {
@@ -112,7 +116,7 @@ class WelcomeController extends Controller
         if (count($racesTwo) > $minCount) {
             $racesTwo = $racesTwo->slice(0, $minCount);
         }
-        return view('pages.catalogflight', compact('races', 'search', 'racesTwo', 'costNumber', 'flightFilter'));
+        return view('pages.catalogflight', compact('races', 'search', 'racesTwo', 'costNumber', 'flightFilter','lang'));
     }
 
     public function cataloghotel()
