@@ -70,7 +70,7 @@
                                             </div>
                                             
                                             <p class="name_ship">
-                                                STARGATE
+                                                {{$item->name}}
                                             </p>
                                             <p class="opis_ship">
                                                 {{$item->description}}
