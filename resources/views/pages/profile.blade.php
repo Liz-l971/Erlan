@@ -109,16 +109,16 @@ Erlan
                                 <div class="display_flex">
                                     <input type="text" placeholder="псевдоним(мама, муж)" name="psevdoname" value="{{old('name')}}" class="top_inputs">
                                     @error('name')
-                                        {{$message}}
+                                    <span class ="red" style="color: red">{{$message}}</span> 
                                     @enderror
                                     <input type="text" placeholder="фамилия"  value="{{old('surname')}}" name="surname" class="top_inputs">
                                     @error('surname')
-                                    {{$message}}
+                                    <span class ="red" style="color: red">{{$message}}</span> 
                                 @enderror
                                     <input type="text" placeholder="Имя"  value="{{old('name')}}" name="name" class="top_inputs">
 
                                     @error('name')
-                                    {{$message}}
+                                    <span class ="red" style="color: red">{{$message}}</span> 
                                 @enderror
                                     <input type="text" placeholder="отчество"  value="{{old('patronymic')}}" name="patronymic" class="top_inputs">
                               
@@ -126,7 +126,7 @@ Erlan
                                 <div class="display_flex">
                                     <input type="date" placeholder="дата рождения" name="date" value="{{old('date')}}" class="data_inputs">
                                     @error('date')
-                                    {{$message}}
+                                    <span class ="red" style="color: red">{{$message}}</span> 
                                 @enderror
                                     <select name="gender"  class="pol_inputs" id="">
                                         <option>пол</option>
@@ -134,26 +134,26 @@ Erlan
                                         <option value="ж">ж</option>
                                     </select>
                                     @error('gender')
-                                    {{$message}}
+                                    <span class ="red" style="color: red">{{$message}}</span> 
                                 @enderror
                                     <select name="nation"  class="top_inputs" id="">
                                         <option>гражданство</option>
-                                        <option value="россия"></option>
-                                        <option value="Китай"></option>
-                                        <option value="Сша"></option>
+                                        <option value="россия">россия</option>
+                                        <option value="Китай">Китай</option>
+                                        <option value="Сша">Сша</option>
                                        
                                     </select>
                                     @error('nation')
-                                    {{$message}}
+                                    <span class ="red" style="color: red">{{$message}}</span> 
                                 @enderror
                                     <input type="text" placeholder="телефон"  value="{{old('number')}}" name="number" class="top_inputs">
                                     @error('number')
-                                    {{$message}}
+                                    <span class ="red" style="color: red">{{$message}}</span> 
                                 @enderror
                                     
                                     <input type="text" placeholder="электронная почта" value="{{old('email')}}" name="email" class="top_inputs">
                                     @error('email')
-                                    {{$message}}
+                                    <span class ="red" style="color: red">{{$message}}</span> 
                                 @enderror
                                 </div>
                                 <button type="submit" class="btn_add_turist">СОхранить</button>

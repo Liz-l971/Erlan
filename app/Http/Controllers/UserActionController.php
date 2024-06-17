@@ -39,7 +39,7 @@ class UserActionController extends Controller
 
     }
 
-    public function addTuristProfile(AddTouristRequest $request,$count){
+    public function addTuristProfile(AddTouristRequest $request){
 
         $data = $request->validated();
         $data['id_user'] = auth()->user()->id;
