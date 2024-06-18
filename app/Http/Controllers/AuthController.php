@@ -62,7 +62,7 @@ class AuthController extends Controller
 
     public function delProfile(){
         $user = User::where('id',auth()->user()->id);
-        Bron::where('user_id',$user->id)->delete();
+        Bron::where('user_id',auth()->user()->id)->delete();
         auth()->logout();
         $user->delete();
         return redirect('/');
