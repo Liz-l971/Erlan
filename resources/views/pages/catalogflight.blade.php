@@ -201,7 +201,7 @@
                                             @endif
 
                                             @if ($fromArray['company'] == 4)
-                                                <img src="{{ asset('assets/img/company/space.png') }}" alt="company">
+                                                <img src="{{ asset('assets/img/company/blue.png') }}" alt="company">
                                             @endif
                                             <h4 class="name_company">
                                                 @if ($fromArray['company'] == 1)
@@ -262,7 +262,7 @@
                                             @endif
 
                                             @if ($toArray['company'] == 4)
-                                                <img src="{{ asset('assets/img/company/space.png') }}" alt="company">
+                                                <img src="{{ asset('assets/img/company/blue.png') }}" alt="company">
                                             @endif
                                             <h4 class="name_company">
                                                 @if ($toArray['company'] == 1)

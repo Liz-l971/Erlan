@@ -7,7 +7,7 @@
   list-style: none;
   text-decoration: none;
   outline: 0 !important;
-  /* cursor: none; */
+  cursor: none; 
 }
 
 button::-moz-focus-inner {
@@ -327,7 +327,7 @@ body {
 
 .svg-container {
   position: absolute;
-  top: 858px;
+  top: 870px;
   left: 178px;
   width: 100%;
   height: auto;
@@ -340,8 +340,8 @@ body {
 
 .navigate {
   position: absolute;
-  top: 748px;
-  left: 48px;
+  top: 760px;
+  left: 50px;
 }
 
 @-webkit-keyframes pulse {
@@ -393,7 +393,7 @@ body {
 }
 .ship_banner {
   position: absolute;
-  top: 680px;
+  top: 700px;
   z-index: -2;
   left: 10px;
   -webkit-transform: rotate(13deg);
@@ -545,10 +545,11 @@ body {
 }
 .all_main_page_info .moon_main_page_img {
   margin-top: 250px;
+  z-index:989;
 }
 .all_main_page_info .starship_main {
   position: absolute;
-  bottom: -707px;
+  bottom: -709px;
   left: 50%;
   margin-left: 180px;
 }
@@ -947,7 +948,8 @@ body {
 }
 .catalog_hotel .right_catalog_hotel .catalog_hotel_flex .catalog_info_hotel .img_hotel_catalog {
   width: 498px;
-  height: 256px;
+  object-fit: cover;
+  
 }
 .catalog_hotel .right_catalog_hotel .catalog_hotel_flex .catalog_info_hotel .text_info_hotel {
   display: -webkit-box;
@@ -959,6 +961,7 @@ body {
           flex-direction: column;
   margin-top: 15px;
   gap: 130px;
+  width: 330px;
 }
 .catalog_hotel .right_catalog_hotel .catalog_hotel_flex .catalog_info_hotel .text_info_hotel .name_hotel {
   font-weight: 400;
@@ -1420,10 +1423,16 @@ body {
 }
 .hotel_item .main_info_about_hotel_item .big_img_hotel {
   width: 1076px;
-  height: 517px;
+height:527px;
+  object-fit: cover;
 }
 .hotel_item .main_info_about_hotel_item .right_block_info_hotel {
   position: relative;
+  width:490px;
+      display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  height: 527px;
   padding: 40px 30px 30px 30px;
   border: 1px solid #D4D4D4;
 }
@@ -1475,7 +1484,9 @@ body {
   display: -ms-flexbox;
   display: flex;
   gap: 10px;
-  margin-top: 225px;
+  max-width:430px;
+  flex-wrap:wrap;
+  
 }
 .hotel_item .main_info_about_hotel_item .right_block_info_hotel .white_btn {
   display: -webkit-box;
@@ -1720,6 +1731,14 @@ body {
   letter-spacing: 0.1em;
   font-family: "MullerRegular";
   text-transform: uppercase;
+  
+   overflow: hidden; /* Обрезаем всё за пределами блока */
+    text-overflow: ellipsis; 
+     margin: 0; /* Убираем внешний отступ */
+    -webkit-line-clamp: 7; /* Число отображаемых строк */
+    display: -webkit-box; /* Включаем флексбоксы */
+    -webkit-box-orient: vertical; /* Вертикальная ориентация */
+   
 }
 .choice_place .flex .card_choice_card .flex_content .line {
   height: 366px;

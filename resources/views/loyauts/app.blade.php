@@ -21,6 +21,7 @@
 	<div id="aura"></div>
     @include('components.header');
     @yield('content');
+    @include('components.footer');
 
 </body>
 </html>
