@@ -79,10 +79,7 @@
             <div class="main_info_about_hotel_item">
                 <img src="{{$hotel->imageHotel()}}{{$hotel->img}}" class="big_img_hotel" alt="">
                 <div class="right_block_info_hotel">
-                    <div class="admin_btn white_cur">
-                        <a href="" class="edit"><img src="../assets/img/icons/edit.svg" alt=""></a>
-                        <a href="" class="delete"><img src="../assets/img/icons/delete.svg" alt=""></a>
-                    </div>
+                   
                     <div class="price_text">
                         <div class="price_p">
                             цена от:
@@ -173,7 +170,7 @@
                         <img src="{{asset('/assets/img/icons/ph_disco-ball.svg')}}" alt="">
                         <img src="{{asset('/assets/img/icons/solar_volleyball-bold.svg')}}" alt=""> --}}
                     </div>
-                    <div style="visibility: hidden;" class="white_btn white_cur">выбрать</div>
+                   
                 </div>
             </div>
             

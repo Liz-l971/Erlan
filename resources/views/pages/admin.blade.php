@@ -160,8 +160,8 @@
                                     <p class="link" onclick="openstate(event, 'block')">Забронированные</p>
                                     <p class="link" onclick="openstate(event, 'arh')">архивные</p>
                                 </div>
-
-                                @foreach ($brons as $item)
+                                @if ($brons!=null)
+                                    @foreach ($brons as $item)
                                 <div class="ebanutsa" style="display: block;" id="all" >
                                     <div class="content_bron">
                                         <div class="hrum_hrum">
@@ -358,6 +358,7 @@
                                                                         fill="white" />
                                                                 </svg>
                                                             </div>
+                                                            @if($item->numberBron!=null)
                                                             <p class="name_hotel">
                                                                 {{ $item->numberBron->hotelBron->name }}
                                                             </p>
@@ -365,6 +366,7 @@
                                                                 {{ $item->numberBron->type }} - {{ $item->numberBron->hotelBron->feed }}
                 
                                                             </p>
+                                                            @endif
                                                         </div>
                 
                 
@@ -403,7 +405,9 @@
                                     </div>
                                 </div>
                                 @endforeach
-                               
+                                @endif
+                              
+                                @if ($brons!=null) 
                                 @foreach ($bronsActive as $item)
                                 <div class="ebanutsa" style="display: block;" id="block" >
                                     <div class="content_bron">
@@ -601,6 +605,7 @@
                                                                         fill="white" />
                                                                 </svg>
                                                             </div>
+                                                           @if($item->numberBron!=null)
                                                             <p class="name_hotel">
                                                                 {{ $item->numberBron->hotelBron->name }}
                                                             </p>
@@ -608,6 +613,7 @@
                                                                 {{ $item->numberBron->type }} - {{ $item->numberBron->hotelBron->feed }}
                 
                                                             </p>
+                                                            @endif
                                                         </div>
                 
                 
@@ -642,6 +648,9 @@
                                     </div>
                                 </div>
                                 @endforeach
+                                @endif
+                                @if ($brons!=null) 
+
                                 @foreach ($bronsDecline as $item)
                                 <div class="ebanutsa" style="display: block;" id="arh" >
                                     <div class="content_bron">
@@ -839,6 +848,7 @@
                                                                         fill="white" />
                                                                 </svg>
                                                             </div>
+                                                             @if($item->numberBron!=null)
                                                             <p class="name_hotel">
                                                                 {{ $item->numberBron->hotelBron->name }}
                                                             </p>
@@ -846,6 +856,7 @@
                                                                 {{ $item->numberBron->type }} - {{ $item->numberBron->hotelBron->feed }}
                 
                                                             </p>
+                                                            @endif
                                                         </div>
                 
                 
@@ -872,6 +883,8 @@
                                     </div>
                                 </div>
                                 @endforeach
+                                @endif
+
                                     
                                 </div>
                             </div>

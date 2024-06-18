@@ -1,14 +1,13 @@
 
 
-<div id="cursor" class="desktop"></div>
-<div id="aura" class="desktop"></div>
+
 
 <header>
     <div class="container">
         <div class="header_content">
-            <div class="logo">
+            <a href="/" class="logo">
                 ERLAN
-            </div>
+            </a>
             <nav>
                 <?if(!session()->has('lang') || session('lang') == 2):?>
                 <form action="/changeValute" method="POST" class="nav_item" style="display: flex;">

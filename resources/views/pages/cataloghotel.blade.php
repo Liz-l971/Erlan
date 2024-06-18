@@ -76,12 +76,12 @@
         </section>
         <div class="container">
             <section class="crums">
-                <a href="" class="href_crum">главная</a>
+                <a href="/" class="href_crum">главная</a>
                 <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 1.5L7 7.5L1 13.5" stroke="white" stroke-width="1.1" stroke-linecap="square"
                         stroke-linejoin="round" />
                 </svg>
-                <a href="" class="href_crum">Поиск тура</a>
+                <a href="/catalog-hotel" class="href_crum">Поиск тура</a>
             </section>
             <div id="hamburger" class="mobile mobile_filtr">
                 <img src="../assets/img/icons/Menu_Alt_01.svg" class="mobile_filtr_img" alt="">
@@ -311,9 +311,9 @@
                                         {{ $item->name }}
                                     </p>
                                     <div class="more_info_hotel">
-                                        <p class="more_info_hotel_p">
-                                            тип питания: {{ $item->feed }}
-                                        </p>
+                                       <!--  <p class="more_info_hotel_p">
+                                           тип питания: {{ $item->feed }}
+                                       </p> -->
                                         <p class="more_info_hotel_p">
                                             тип номера:
                                             @foreach ($item->numbers() as $number)

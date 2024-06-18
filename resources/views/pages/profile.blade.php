@@ -435,7 +435,7 @@ Erlan
                                                         {{ $bron->numberBron->hotelBron->name }}
                                                     </p>
                                                     <p class="class_and_eat">
-                                                        {{ $bron->numberBron->type }} - {{ $bron->numberBron->hotelBron->feed }}
+                                                        {{ $bron->numberBron->type }} 
         
                                                     </p>
                                                 </div>
