@@ -62,10 +62,7 @@
             <h2 class="name_page">
                 выберите класс обслуживания
             </h2>
-            <div class="admin_btn white_cur">
-                <a href="" class="edit"><img src="{{asset('/assets/img/icons/edit.svg')}}" alt=""></a>
-                <a href="" class="delete"><img src="{{asset('/assets/img/icons/delete.svg')}}" alt=""></a>
-            </div>
+        
             <div class="display_content">
                 <div class="flex_column_content">
                     <h3 class="name_block">Туда</h3>
