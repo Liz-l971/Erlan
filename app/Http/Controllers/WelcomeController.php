@@ -35,7 +35,7 @@ class WelcomeController extends Controller
         $numberOfDaysToAdd = $search['nights'];
         $newDate = $startDate->addDays($numberOfDaysToAdd)->toDateString();
 
-        $racesQ = Race::where('otcuda', $search['from'])->where('cuda', $search['to'])->where('time_otb', $search['date']);
+        $racesQ = Race::where('otcuda', $search['from'])->where('cuda', $search['to'])->where('time_prib', $search['date']);
         $racesTwoQ = Race::where('otcuda', $search['to'])->where('cuda', $search['from'])->where('time_otb', $newDate);
 
         $idNumber = Session::get('number')['id_number'];
