@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\SignInRequest;
 use App\Http\Requests\EditProfileRequest;
 use App\Http\Requests\changePassRequest;
+use App\Models\Bron;
 use Carbon\Carbon;
 class AuthController extends Controller
 {
@@ -61,6 +62,7 @@ class AuthController extends Controller
 
     public function delProfile(){
         $user = User::where('id',auth()->user()->id);
+        Bron::where('user_id',$user->id)->delete();
         auth()->logout();
         $user->delete();
         return redirect('/');
